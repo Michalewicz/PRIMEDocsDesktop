@@ -1,0 +1,9 @@
+﻿<Application x:Class="PrimeDocs_Desktop.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PrimeDocs_Desktop"
+             StartupUri="UI/InitialWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
