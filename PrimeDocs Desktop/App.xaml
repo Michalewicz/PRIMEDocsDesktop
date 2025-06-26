@@ -1,9 +1,80 @@
 ﻿<Application x:Class="PrimeDocs_Desktop.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:PrimeDocs_Desktop"
              StartupUri="UI/InitialWindow.xaml">
     <Application.Resources>
-         
+        <!-- Paleta de Cores -->
+        <Color x:Key="PrimaryColor">#FF0003DC</Color>
+        <Color x:Key="SecondaryColor">#FFB7B7B7</Color>
+        <Color x:Key="AccentColor">#FF40A9FF</Color>
+        <Color x:Key="ButtonHoverColor">#40FFFFFF</Color>
+        <Color x:Key="ButtonPressedColor">#80FFFFFF</Color>
+        <Color x:Key="ButtonDisabledColor">#40AAAAAA</Color>
+
+        <!-- Brushes -->
+        <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}"/>
+        <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource SecondaryColor}"/>
+        <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}"/>
+        <SolidColorBrush x:Key="ButtonHoverBrush" Color="{StaticResource ButtonHoverColor}"/>
+        <SolidColorBrush x:Key="ButtonPressedBrush" Color="{StaticResource ButtonPressedColor}"/>
+        <SolidColorBrush x:Key="ButtonDisabledBrush" Color="{StaticResource ButtonDisabledColor}"/>
+
+        <!-- Fonte padrão -->
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+
+        <!-- Estilo aprimorado para Button com suporte a imagem -->
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="{x:Null}"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <!-- Imagem de fundo -->
+                            <Border x:Name="ImageBorder"
+                                    Background="{TemplateBinding Background}"
+                                    CornerRadius="8"/>
+                            <!-- Overlay para hover/press/disabled -->
+                            <Border x:Name="Overlay"
+                                    Background="Transparent"
+                                    CornerRadius="8"/>
+                            <!-- Borda visual -->
+                            <Border x:Name="BorderVisual"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="8"
+                                    Background="Transparent"/>
+                            <!-- Conteúdo -->
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Overlay" Property="Background" Value="{StaticResource ButtonHoverBrush}"/>
+                                <Setter TargetName="BorderVisual" Property="BorderBrush" Value="{StaticResource AccentBrush}"/>
+                                <Setter TargetName="BorderVisual" Property="BorderThickness" Value="2"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Overlay" Property="Background" Value="{StaticResource ButtonPressedBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Overlay" Property="Background" Value="{StaticResource ButtonDisabledBrush}"/>
+                                <Setter Property="Foreground" Value="Gray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>
