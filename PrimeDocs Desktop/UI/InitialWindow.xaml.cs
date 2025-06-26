@@ -20,5 +20,35 @@ namespace PrimeDocs_Desktop
         {
             InitializeComponent();
         }
+
+        private void btInitialWindowProfile_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btInitialWindowConfig_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btInitialWindowDocumentText_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btInitialWindowDocumentA4_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btInitialWindowDocumentMD_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btInitialWindowDocumentCreationDropDown_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
