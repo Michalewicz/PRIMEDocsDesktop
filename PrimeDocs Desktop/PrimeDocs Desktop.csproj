@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -12,6 +12,7 @@
   <ItemGroup>
     <None Remove="Resources\Icons\InitialWindow\A4.png" />
     <None Remove="Resources\Icons\InitialWindow\close.png" />
+    <None Remove="Resources\Icons\InitialWindow\collapse.png" />
     <None Remove="Resources\Icons\InitialWindow\config.png" />
     <None Remove="Resources\Icons\InitialWindow\maximize.png" />
     <None Remove="Resources\Icons\InitialWindow\MD.png" />
@@ -31,6 +32,7 @@
   <ItemGroup>
     <Resource Include="Resources\Icons\InitialWindow\A4.png" />
     <Resource Include="Resources\Icons\InitialWindow\close.png" />
+    <Resource Include="Resources\Icons\InitialWindow\collapse.png" />
     <Resource Include="Resources\Icons\InitialWindow\config.png" />
     <Resource Include="Resources\Icons\InitialWindow\maximize.png" />
     <Resource Include="Resources\Icons\InitialWindow\MD.png" />
