@@ -28,28 +28,47 @@
                 </Grid>
             </Border>
 
-        </StackPanel>
-        <Button x:Name="btInitialWindowDocumentA4" Margin="10,122,0,0" Click="btInitialWindowDocumentA4_Click" HorizontalAlignment="Left" Width="130" Height="170" VerticalAlignment="Top" BorderBrush="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/Resources/Icons/InitialWindow/A4.png"/>
-            </Button.Background>
-        </Button>
-        <TextBlock x:Name="tbInitialWindowDocumentCreation" TextWrapping="Wrap" Text="Criação de Documentos" Margin="10,75,0,0" FontSize="25" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="780"/>
-        <Rectangle x:Name="rtInitialWindowLineDocument" Height="2" Margin="10,109,10,0" Stroke="#FF797979" VerticalAlignment="Top"/>
-        <TextBlock x:Name="tbInitialWindowDocumentA4" TextWrapping="Wrap" TextAlignment="Center" Text="Novo documento A4" Margin="10,297,0,0" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="130"/>
-        <Button x:Name="btInitialWindowDocumentText" Margin="180,122,0,0" Click="btInitialWindowDocumentText_Click" HorizontalAlignment="Left" Width="130" Height="170" VerticalAlignment="Top" BorderBrush="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/Resources/Icons/InitialWindow/TXT.png"/>
-            </Button.Background>
-        </Button>
-        <TextBlock x:Name="tbInitialWindowDocumentText" TextWrapping="Wrap" TextAlignment="Center" Text="Novo documento de texto" Margin="180,297,0,0" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="130"/>
-        <Button x:Name="btInitialWindowDocumentMD" Margin="350,122,0,0" Click="btInitialWindowDocumentMD_Click" HorizontalAlignment="Left" Width="130" Height="170" VerticalAlignment="Top" BorderBrush="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/Resources/Icons/InitialWindow/MD.png"/>
-            </Button.Background>
-        </Button>
-        <TextBlock x:Name="tbInitialWindowDocumentMD" TextWrapping="Wrap" TextAlignment="Center" Text="Novo documento MarkDown" Margin="350,297,0,0" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="130"/>
-        <Button x:Name="btInitialWindowDocumentCreationDropDown" Content="Button" Margin="0,75,10,0" Click="btInitialWindowDocumentCreationDropDown_Click" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35"/>
 
+        </StackPanel>
+        <Grid x:Name="grInitialWindowDocumentCreation" Margin="10,75,10,0" Height="279" VerticalAlignment="Top">
+            <TextBlock x:Name="tbInitialWindowDocumentCreation" TextWrapping="Wrap" Text="Criação de Documentos" Margin="0,10,0,234" FontSize="25" HorizontalAlignment="Left" Width="780"/>
+            <Rectangle x:Name="rtInitialWindowLineDocument" Height="2" Margin="0,44,0,0" Stroke="#FF797979" VerticalAlignment="Top"/>
+            <Grid x:Name="grInitialWindowDocumentCreationNew" Margin="10,51,10,0" Height="230" VerticalAlignment="Top">
+                <TextBlock x:Name="tbInitialWindowDocumentA4" TextWrapping="Wrap" TextAlignment="Center" Text="Novo documento A4" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="130" Margin="10,180,0,0"/>
+                <Button x:Name="btInitialWindowDocumentA4" Margin="10,5,0,0" Click="btInitialWindowDocumentA4_Click" HorizontalAlignment="Left" Width="130" Height="170" VerticalAlignment="Top" BorderBrush="{x:Null}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Resources/Icons/InitialWindow/A4.png"/>
+                    </Button.Background>
+                </Button>
+
+                <TextBlock x:Name="tbInitialWindowDocumentText" TextWrapping="Wrap" TextAlignment="Center" Text="Novo documento de texto" Margin="170,180,0,0" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="130"/>
+                <Button x:Name="btInitialWindowDocumentText" Margin="170,5,0,0" Click="btInitialWindowDocumentText_Click" HorizontalAlignment="Left" Width="130" Height="170" VerticalAlignment="Top" BorderBrush="{x:Null}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Resources/Icons/InitialWindow/TXT.png"/>
+                    </Button.Background>
+                </Button>
+
+                <TextBlock x:Name="tbInitialWindowDocumentMD" TextWrapping="Wrap" TextAlignment="Center" Text="Novo documento MarkDown" Margin="330,180,0,0" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="130"/>
+                <Button x:Name="btInitialWindowDocumentMD" Margin="330,5,0,0" Click="btInitialWindowDocumentMD_Click" HorizontalAlignment="Left" Width="130" Height="170" VerticalAlignment="Top" BorderBrush="{x:Null}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Resources/Icons/InitialWindow/MD.png"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+            <Button x:Name="btInitialWindowDocumentCreationCollapse" Margin="0,10,0,0" Click="btInitialWindowDocumentCreationCollapse_Click" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resources/Icons/InitialWindow/collapse.png"/>
+                </Button.Background>
+            </Button>
+        </Grid>
+        <Grid x:Name="grInitialWindowOpenDocument" Margin="10,360,10,0" Height="215" VerticalAlignment="Top">
+            <TextBlock x:Name="tbInitialWindowOpenDocument" TextWrapping="Wrap" Text="Abrir Documentos" FontSize="25" HorizontalAlignment="Left" Width="780" Margin="0,9,0,171"/>
+            <Rectangle x:Name="rtInitialWindowLineOpenDocument" Height="2" Margin="0,43,0,0" Stroke="#FF797979" VerticalAlignment="Top"/>
+            <Button x:Name="btInitialWindowOpenDocumentCollapse" Margin="0,9,0,172" Click="btInitialWindowOpenDocumentCollapse_Click" HorizontalAlignment="Right" Width="35">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resources/Icons/InitialWindow/collapse.png"/>
+                </Button.Background>
+            </Button>
+        </Grid>
     </Grid>
 </Window>
