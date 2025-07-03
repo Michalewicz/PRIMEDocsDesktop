@@ -1,18 +1,19 @@
-using System;
-using System.Runtime.InteropServices;
 using PrimeDocs_Desktop.UI;
+using System;
 using System.Configuration;
+using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Interop;
 
 namespace PrimeDocs_Desktop
 {
@@ -21,10 +22,13 @@ namespace PrimeDocs_Desktop
     /// </summary>
     public partial class MainWindow : Window
     {
+        private bool isDraggingFromMaximized = false;
+
         public MainWindow()
         {
             InitializeComponent();
             Loaded += MainWindow_Loaded;
+            brInitialWindowTopBar.MouseMove += brInitialWindowTopBar_MouseMove;
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -91,7 +95,7 @@ namespace PrimeDocs_Desktop
         {
             var mmi = Marshal.PtrToStructure<MINMAXINFO>(lParam);
 
-            IntPtr monitor = MonitorFromWindow(hwnd, 2 /*MONITOR_DEFAULTTONEAREST*/);
+            IntPtr monitor = MonitorFromWindow(hwnd, 2);
             if (monitor != IntPtr.Zero)
             {
                 var monitorInfo = new MONITORINFO();
@@ -106,6 +110,10 @@ namespace PrimeDocs_Desktop
                     mmi.ptMaxSize.Y = rcWorkArea.bottom - rcWorkArea.top;
                 }
             }
+
+            // Adicione este trecho para respeitar o tamanho mínimo do XAML
+            mmi.ptMinTrackSize.X = (int)this.MinWidth;
+            mmi.ptMinTrackSize.Y = (int)this.MinHeight;
 
             Marshal.StructureToPtr(mmi, lParam, true);
         }
@@ -164,36 +172,114 @@ namespace PrimeDocs_Desktop
             else
                 tbInitialWindowName.Visibility = Visibility.Visible;
         }
+        private void WindowStateChange(bool doubleClick, MouseButtonEventArgs e)
+        {
+            if (WindowState == WindowState.Maximized)
+            {
+                var mouseX = e.GetPosition(this).X;
+                double percentHorizontal = mouseX / ActualWidth;
+                if (doubleClick)
+                    WindowState = WindowState.Normal;
 
+                this.Dispatcher.InvokeAsync(() =>
+                {
+                    double screenWidth = SystemParameters.WorkArea.Width;
+                    double screenLeft = SystemParameters.WorkArea.Left;
+                    double newLeft = screenLeft + (screenWidth - this.Width) * percentHorizontal;
+                    this.Left = newLeft;
+                    this.Top = SystemParameters.WorkArea.Top + 10;
+
+                    if (WindowState == WindowState.Normal)
+                    {
+                        try
+                        {
+                            DragMove();
+                        }
+                        catch (InvalidOperationException)
+                        {
+                            // Ignora a exceção, pois pode ocorrer se o usuário soltar o mouse muito rápido
+                        }
+                    }
+                }, System.Windows.Threading.DispatcherPriority.ApplicationIdle);
+            }
+            else
+            {
+                try
+                {
+                    if (doubleClick)
+                        WindowState = WindowState.Maximized;
+                    DragMove();
+                }
+                catch (InvalidOperationException)
+                {
+                    // Ignora a exceção, pois pode ocorrer se o usuário soltar o mouse muito rápido
+                }
+            }
+        }
         private void brInitialWindowTopBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
             {
-                if (WindowState == WindowState.Maximized)
+                if (e.ClickCount == 2)
                 {
-                    // Calcula a posição do mouse relativa à janela maximizada
-                    var mouseX = e.GetPosition(this).X;
-                    double percentHorizontal = mouseX / ActualWidth;
-                    WindowState = WindowState.Normal;
-
-                    // Aguarda o layout atualizar
-                    this.Dispatcher.InvokeAsync(() =>
+                    // Duplo clique: maximiza/restaura
+                    if (WindowState == WindowState.Maximized)
+                        WindowState = WindowState.Normal;
+                    else
+                        WindowState = WindowState.Maximized;
+                }
+                else if (WindowState == WindowState.Maximized)
+                {
+                    // Clique simples: prepara para arrastar se mover
+                    isDraggingFromMaximized = true;
+                }
+                else if (WindowState == WindowState.Normal)
+                {
+                    // Permite arrastar normalmente quando não está maximizada
+                    try
                     {
-                        // Usando apenas WPF:
-                        double screenWidth = SystemParameters.WorkArea.Width;
-                        double screenLeft = SystemParameters.WorkArea.Left;
-                        double newLeft = screenLeft + (screenWidth - this.Width) * percentHorizontal;
-                        this.Left = newLeft;
-                        this.Top = SystemParameters.WorkArea.Top + 10; // Pequeno deslocamento para baixo
-
-                        // Inicia o arrasto da janela
                         DragMove();
-                    }, System.Windows.Threading.DispatcherPriority.ApplicationIdle);
+                    }
+                    catch (InvalidOperationException)
+                    {
+                        // Ignora a exceção, pois pode ocorrer se o usuário soltar o mouse muito rápido
+                    }
                 }
-                else
+            }
+        }
+
+        private void brInitialWindowTopBar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDraggingFromMaximized && e.LeftButton == MouseButtonState.Pressed)
+            {
+                isDraggingFromMaximized = false;
+
+                // Calcula a posição do mouse relativa à janela maximizada
+                var mouseX = e.GetPosition(this).X;
+                double percentHorizontal = mouseX / ActualWidth;
+                WindowState = WindowState.Normal;
+
+                this.Dispatcher.InvokeAsync(() =>
                 {
-                    DragMove();
-                }
+                    double screenWidth = SystemParameters.WorkArea.Width;
+                    double screenLeft = SystemParameters.WorkArea.Left;
+                    double newLeft = screenLeft + (screenWidth - this.Width) * percentHorizontal;
+                    this.Left = newLeft;
+                    this.Top = SystemParameters.WorkArea.Top + 10;
+
+                    try
+                    {
+                        DragMove();
+                    }
+                    catch (InvalidOperationException)
+                    {
+                        // Ignora a exceção, pois pode ocorrer se o usuário soltar o mouse muito rápido
+                    }
+                }, System.Windows.Threading.DispatcherPriority.ApplicationIdle);
+            }
+            else if (e.LeftButton != MouseButtonState.Pressed)
+            {
+                isDraggingFromMaximized = false;
             }
         }
 
@@ -229,19 +315,30 @@ namespace PrimeDocs_Desktop
             else
                 WindowState = WindowState.Maximized;
 
-            UpdateMaximizeIcon();
+            UpdateMaximize();
         }
 
         // Atualiza o ícone do botão de maximizar/restaurar
-        private void UpdateMaximizeIcon()
+        private void UpdateMaximize()
         {
             var brush = btInitialWindowMaximize.Background as ImageBrush;
             if (brush != null)
             {
                 if (WindowState == WindowState.Maximized)
+                {
                     brush.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Resources/Icons/InitialWindow/minimize.png"));
+                    MainBorder.CornerRadius = new CornerRadius(0);
+                    SecondaryBorder.CornerRadius = new CornerRadius(0);
+                    brInitialWindowTopBar.CornerRadius = new CornerRadius(0, 0, 13, 13);
+                }
                 else
+                {
                     brush.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Resources/Icons/InitialWindow/maximize.png"));
+                    MainBorder.CornerRadius = new CornerRadius(15);
+                    SecondaryBorder.CornerRadius = new CornerRadius(15);
+                    brInitialWindowTopBar.CornerRadius = new CornerRadius(13);
+
+                }
             }
         }
 
@@ -249,7 +346,7 @@ namespace PrimeDocs_Desktop
         protected override void OnStateChanged(EventArgs e)
         {
             base.OnStateChanged(e);
-            UpdateMaximizeIcon();
+            UpdateMaximize();
         }
 
         // Função para fechar
@@ -276,6 +373,6 @@ namespace PrimeDocs_Desktop
             button.RenderTransform = rotation;
             button.RenderTransformOrigin = new Point(0.5, 0.5);
         }
-        
+
     }
 }
