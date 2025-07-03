@@ -11,8 +11,12 @@
 
   <ItemGroup>
     <None Remove="Resources\Icons\InitialWindow\A4.png" />
+    <None Remove="Resources\Icons\InitialWindow\close.png" />
     <None Remove="Resources\Icons\InitialWindow\config.png" />
+    <None Remove="Resources\Icons\InitialWindow\maximize.png" />
     <None Remove="Resources\Icons\InitialWindow\MD.png" />
+    <None Remove="Resources\Icons\InitialWindow\minimize.png" />
+    <None Remove="Resources\Icons\InitialWindow\minus.png" />
     <None Remove="Resources\Icons\InitialWindow\profile.png" />
     <None Remove="Resources\Icons\InitialWindow\TXT.png" />
     <None Remove="Resources\Icons\PrimeDocs.ico" />
@@ -26,8 +30,12 @@
 
   <ItemGroup>
     <Resource Include="Resources\Icons\InitialWindow\A4.png" />
+    <Resource Include="Resources\Icons\InitialWindow\close.png" />
     <Resource Include="Resources\Icons\InitialWindow\config.png" />
+    <Resource Include="Resources\Icons\InitialWindow\maximize.png" />
     <Resource Include="Resources\Icons\InitialWindow\MD.png" />
+    <Resource Include="Resources\Icons\InitialWindow\minimize.png" />
+    <Resource Include="Resources\Icons\InitialWindow\minus.png" />
     <Resource Include="Resources\Icons\InitialWindow\profile.png" />
     <Resource Include="Resources\Icons\InitialWindow\TXT.png" />
     <Resource Include="Resources\Icons\PrimeDocs.ico" />
