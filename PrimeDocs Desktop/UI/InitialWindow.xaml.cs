@@ -143,7 +143,25 @@ namespace PrimeDocs_Desktop
         {
 
         }
-
+        private void rotateCollapseButton(Button button)
+        {
+            double newAngle;
+            if (button.RenderTransform is RotateTransform existentRotation)
+            {
+                double angle = existentRotation.Angle;
+                if (angle == 180)
+                    newAngle = 0;
+                else
+                    newAngle = 180;
+            }
+            else
+            {
+                newAngle = 180; // Default angle if no rotation exists
+            }
+            RotateTransform rotation = new RotateTransform(newAngle);
+            button.RenderTransform = rotation;
+            button.RenderTransformOrigin = new Point(0.5, 0.5);
+        }
         private void btInitialWindowDocumentCreationCollapse_Click(object sender, RoutedEventArgs e)
         {
             rotateCollapseButton(btInitialWindowDocumentCreationCollapse);
@@ -163,7 +181,20 @@ namespace PrimeDocs_Desktop
         private void btInitialWindowOpenDocumentCollapse_Click(object sender, RoutedEventArgs e)
         {
             rotateCollapseButton(btInitialWindowOpenDocumentCollapse);
+            if (grInitialWindowOpenDocumentNew.Visibility == Visibility.Visible)
+            {
+                grInitialWindowOpenDocumentNew.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                grInitialWindowOpenDocumentNew.Visibility = Visibility.Visible;
+            }
         }
+        private void btInitialWindowOpenDocumentCollapseFilter_Click(object sender, RoutedEventArgs e)
+        {
+            rotateCollapseButton(btInitialWindowOpenDocumentCollapseFilter);
+        }
+
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
@@ -171,50 +202,6 @@ namespace PrimeDocs_Desktop
                 tbInitialWindowName.Visibility = Visibility.Collapsed;
             else
                 tbInitialWindowName.Visibility = Visibility.Visible;
-        }
-        private void WindowStateChange(bool doubleClick, MouseButtonEventArgs e)
-        {
-            if (WindowState == WindowState.Maximized)
-            {
-                var mouseX = e.GetPosition(this).X;
-                double percentHorizontal = mouseX / ActualWidth;
-                if (doubleClick)
-                    WindowState = WindowState.Normal;
-
-                this.Dispatcher.InvokeAsync(() =>
-                {
-                    double screenWidth = SystemParameters.WorkArea.Width;
-                    double screenLeft = SystemParameters.WorkArea.Left;
-                    double newLeft = screenLeft + (screenWidth - this.Width) * percentHorizontal;
-                    this.Left = newLeft;
-                    this.Top = SystemParameters.WorkArea.Top + 10;
-
-                    if (WindowState == WindowState.Normal)
-                    {
-                        try
-                        {
-                            DragMove();
-                        }
-                        catch (InvalidOperationException)
-                        {
-                            // Ignora a exceção, pois pode ocorrer se o usuário soltar o mouse muito rápido
-                        }
-                    }
-                }, System.Windows.Threading.DispatcherPriority.ApplicationIdle);
-            }
-            else
-            {
-                try
-                {
-                    if (doubleClick)
-                        WindowState = WindowState.Maximized;
-                    DragMove();
-                }
-                catch (InvalidOperationException)
-                {
-                    // Ignora a exceção, pois pode ocorrer se o usuário soltar o mouse muito rápido
-                }
-            }
         }
         private void brInitialWindowTopBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -354,25 +341,6 @@ namespace PrimeDocs_Desktop
         {
             Close();
         }
-        private void rotateCollapseButton(Button button)
-        {
-            double newAngle;
-            if (button.RenderTransform is RotateTransform existentRotation)
-            {
-                double angle = existentRotation.Angle;
-                if (angle == 180)
-                    newAngle = 0;
-                else
-                    newAngle = 180;
-            }
-            else
-            {
-                newAngle = 180; // Default angle if no rotation exists
-            }
-            RotateTransform rotation = new RotateTransform(newAngle);
-            button.RenderTransform = rotation;
-            button.RenderTransformOrigin = new Point(0.5, 0.5);
-        }
-
+        
     }
 }
