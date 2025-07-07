@@ -20,21 +20,29 @@
         <Grid>
             <Border x:Name="SecondaryBorder" CornerRadius="15" Background="White" Margin="0">
                 <StackPanel Background="Transparent">
+                    <local:TopBarPrimeDocs x:Name="tbpInitialWindowTopBar" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+                    <!--
                     <Border x:Name="brInitialWindowTopBar" Background="#FF0003DC" CornerRadius="13" Padding="10" MouseDown="brInitialWindowTopBar_MouseDown">
                         <Grid x:Name="grInitialWindowTopBar" Height="50" Background="#FF0003DC">
                             <TextBlock x:Name="tbInitialWindowTopTitle" TextWrapping="Wrap" Text="Início" TextAlignment="Center" Margin="10,8,0,0" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="25" Height="30" FontFamily="Open Sans"/>
                             <Grid Margin="0,2,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Height="50" Width="511">
+                                --><!--
                                 <TextBlock x:Name="tbInitialWindowName" TextWrapping="Wrap" Text="Nome" TextAlignment="Right" Foreground="White" FontSize="25" Margin="23,6,246,0" FontFamily="Open Sans" VerticalAlignment="Top"/>
                                 <Button x:Name="btInitialWindowProfile" Style="{StaticResource ProfileConfigButtonStyle}" HorizontalAlignment="Left" Margin="290,0,0,0" VerticalAlignment="Center" Height="30" Width="30" BorderBrush="{x:Null}" Click="btInitialWindowProfile_Click" Padding="20,20,20,20" RenderTransformOrigin="0.514,0.588" Grid.IsSharedSizeScope="True">
                                     <Button.Background>
                                         <ImageBrush ImageSource="/Resources/Icons/InitialWindow/profile.png" Stretch="Fill"/>
                                     </Button.Background>
-                                </Button>
-                                <Button x:Name="btInitialWindowConfig" Style="{StaticResource ProfileConfigButtonStyle}" HorizontalAlignment="Left" Margin="339,0,0,0" VerticalAlignment="Center" Height="30" Width="30" BorderBrush="{x:Null}" Click="btInitialWindowConfig_Click">
+                                </Button>--><!--
+                                <local:Profile Margin="-46,7,230,7" Height="36" />
+                                <local:Config Margin="286,7,189,7" />
+                                <local:WindowControl Margin="358,0,10,0" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                                   -->
+                                <!--<Button x:Name="btInitialWindowConfig" Style="{StaticResource ProfileConfigButtonStyle}" HorizontalAlignment="Left" Margin="339,0,0,0" VerticalAlignment="Center" Height="30" Width="30" BorderBrush="{x:Null}" Click="btInitialWindowConfig_Click">
                                     <Button.Background>
                                         <ImageBrush ImageSource="/Resources/Icons/InitialWindow/config.png" Stretch="Fill"/>
                                     </Button.Background>
-                                </Button>
+                                </Button>-->
+                                <!--
                                 <Button Focusable="False" x:Name="btInitialWindowMinimize" HorizontalAlignment="Left" Margin="389,0,0,0" VerticalAlignment="Center" Height="30" Width="30" BorderBrush="{x:Null}" Click="btInitialWindowMinimize_Click" Foreground="{x:Null}">
                                     <Button.Background>
                                         <ImageBrush ImageSource="/Resources/Icons/InitialWindow/minus.png"/>
@@ -49,13 +57,13 @@
                                     <Button.Background>
                                         <ImageBrush ImageSource="/Resources/Icons/InitialWindow/close.png"/>
                                     </Button.Background>
-                                </Button>
-                            </Grid>
+                                </Button>-->
+                           <!-- </Grid>
                         </Grid>
-                    </Border>
+                    </Border>-->
                 </StackPanel>
             </Border>
-            <Grid x:Name="grInitialWindowDocumentCreation" Margin="10,75,10,0" Height="279" VerticalAlignment="Top">
+            <Grid x:Name="grInitialWindowDocumentCreation" Margin="10,42,10,0" Height="279" VerticalAlignment="Top">
                 <TextBlock x:Name="tbInitialWindowDocumentCreation" TextWrapping="Wrap" Text="Criação de Documentos" Margin="0,10,0,234" FontSize="25" HorizontalAlignment="Left" Width="780" FontFamily="Open Sans"/>
                 <Rectangle x:Name="rtInitialWindowLineDocument" Height="2" Margin="0,44,0,0" Stroke="#E5CECECE" VerticalAlignment="Top"/>
                 <Grid x:Name="grInitialWindowDocumentCreationNew" Margin="10,50,10,0" Height="230" VerticalAlignment="Top">
@@ -86,7 +94,7 @@
                     </Button.Background>
                 </Button>
             </Grid>
-            <Grid x:Name="grInitialWindowOpenDocument" Margin="10,360,10,0" Height="279" VerticalAlignment="Top">
+            <Grid x:Name="grInitialWindowOpenDocument" Margin="10,344,10,0" Height="279" VerticalAlignment="Top">
                 <TextBlock x:Name="tbInitialWindowOpenDocument" TextWrapping="Wrap" Text="Abrir Documentos" FontSize="25" HorizontalAlignment="Left" Width="780" Margin="0,9,0,0" FontFamily="Open Sans" Height="35" VerticalAlignment="Top"/>
                 <Rectangle x:Name="rtInitialWindowLineOpenDocument" Height="2" Margin="0,43,0,0" Stroke="#E5CECECE" VerticalAlignment="Top"/>
                 <Button x:Name="btInitialWindowOpenDocumentCollapse" Margin="0,9,0,0" Click="btInitialWindowOpenDocumentCollapse_Click" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35">

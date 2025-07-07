@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="PrimeDocs_Desktop.Profile"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PrimeDocs_Desktop"
+             mc:Ignorable="d">
+    <Grid>
+        <Image d:Height="30"  d:Width="30" HorizontalAlignment="Right"  Source="/Resources/Icons/InitialWindow/profile.png" VerticalAlignment="Center" />
+        <TextBlock TextWrapping="Wrap" Text="Nome" FontFamily="Open Sans" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,50,0" FontSize="25" Foreground="White"/>
+        <Button Focusable="False" Style="{StaticResource ProfileConfigButtonStyle}" d:Height="30" d:Width="250" BorderBrush="{x:Null}" Click="btInitialWindowProfile_Click"/>
+    </Grid>
+</UserControl>

@@ -28,7 +28,7 @@ namespace PrimeDocs_Desktop
         {
             InitializeComponent();
             Loaded += MainWindow_Loaded;
-            brInitialWindowTopBar.MouseMove += brInitialWindowTopBar_MouseMove;
+            //brInitialWindowTopBar.MouseMove += brInitialWindowTopBar_MouseMove;
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -198,10 +198,10 @@ namespace PrimeDocs_Desktop
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            if (this.ActualWidth < 900)
+            /*if (this.ActualWidth < 900)
                 tbInitialWindowName.Visibility = Visibility.Collapsed;
             else
-                tbInitialWindowName.Visibility = Visibility.Visible;
+                tbInitialWindowName.Visibility = Visibility.Visible;*/
         }
         private void brInitialWindowTopBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -302,10 +302,11 @@ namespace PrimeDocs_Desktop
             else
                 WindowState = WindowState.Maximized;
 
-            UpdateMaximize();
+            //UpdateMaximize();
         }
 
         // Atualiza o ícone do botão de maximizar/restaurar
+        /*
         private void UpdateMaximize()
         {
             var brush = btInitialWindowMaximize.Background as ImageBrush;
@@ -341,6 +342,6 @@ namespace PrimeDocs_Desktop
         {
             Close();
         }
-        
+        */
     }
 }
