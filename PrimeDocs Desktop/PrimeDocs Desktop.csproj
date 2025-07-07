@@ -27,6 +27,7 @@
     <Folder Include="Core\" />
     <Folder Include="Models\" />
     <Folder Include="Services\" />
+    <Folder Include="UI\Components\TopBar\" />
   </ItemGroup>
 
   <ItemGroup>

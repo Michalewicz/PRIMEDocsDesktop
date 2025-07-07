@@ -143,59 +143,6 @@ namespace PrimeDocs_Desktop
         {
 
         }
-        private void rotateCollapseButton(Button button)
-        {
-            double newAngle;
-            if (button.RenderTransform is RotateTransform existentRotation)
-            {
-                double angle = existentRotation.Angle;
-                if (angle == 180)
-                    newAngle = 0;
-                else
-                    newAngle = 180;
-            }
-            else
-            {
-                newAngle = 180; // Default angle if no rotation exists
-            }
-            RotateTransform rotation = new RotateTransform(newAngle);
-            button.RenderTransform = rotation;
-            button.RenderTransformOrigin = new Point(0.5, 0.5);
-        }
-        private void btInitialWindowDocumentCreationCollapse_Click(object sender, RoutedEventArgs e)
-        {
-            rotateCollapseButton(btInitialWindowDocumentCreationCollapse);
-
-            if (grInitialWindowDocumentCreationNew.Visibility == Visibility.Visible)
-            {
-                grInitialWindowDocumentCreationNew.Visibility = Visibility.Collapsed;
-                grInitialWindowOpenDocument.Margin = new Thickness(10, 120, 10, 0);
-            }
-            else
-            {
-                grInitialWindowDocumentCreationNew.Visibility = Visibility.Visible;
-                grInitialWindowOpenDocument.Margin = new Thickness(10, 360, 10, 0);
-            }
-        }
-
-        private void btInitialWindowOpenDocumentCollapse_Click(object sender, RoutedEventArgs e)
-        {
-            rotateCollapseButton(btInitialWindowOpenDocumentCollapse);
-            if (grInitialWindowOpenDocumentNew.Visibility == Visibility.Visible)
-            {
-                grInitialWindowOpenDocumentNew.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                grInitialWindowOpenDocumentNew.Visibility = Visibility.Visible;
-            }
-        }
-        private void btInitialWindowOpenDocumentCollapseFilter_Click(object sender, RoutedEventArgs e)
-        {
-            rotateCollapseButton(btInitialWindowOpenDocumentCollapseFilter);
-        }
-
-
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             if (this.ActualWidth < 900)
