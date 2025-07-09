@@ -4,7 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
-namespace PrimeDocs_Desktop
+namespace PrimeDocs_Desktop.UI.Components
 {
     public partial class TopBarPrimeDocs : UserControl
     {

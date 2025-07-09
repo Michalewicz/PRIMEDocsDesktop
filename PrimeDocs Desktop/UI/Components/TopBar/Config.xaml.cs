@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PrimeDocs_Desktop
+namespace PrimeDocs_Desktop.UI.Components
 {
     /// <summary>
     /// Interação lógica para Config.xam
