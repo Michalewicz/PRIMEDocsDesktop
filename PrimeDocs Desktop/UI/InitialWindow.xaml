@@ -6,15 +6,22 @@
         xmlns:components="clr-namespace:PrimeDocs_Desktop.UI.Components"
         mc:Ignorable="d"
         Icon="/Resources/Icons/PrimeDocs.ico"
-        Title="PrimeDocs" Height="857" Width="800" MinHeight="600" MinWidth="700"
-        Background="Transparent">
+
+        Title="PrimeDocs" Height="800" Width="800" MinHeight="800" MinWidth="800"
+        SizeChanged="Window_SizeChanged"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    <WindowChrome.WindowChrome>
+        <WindowChrome
+            CaptionHeight="0"
+            ResizeBorderThickness="8"
+            GlassFrameThickness="0"
+            UseAeroCaptionButtons="False"/>
+    </WindowChrome.WindowChrome>
     <Border x:Name="MainBorder" BorderBrush="#FF0003DC" BorderThickness="2" CornerRadius="17" Background="White" ClipToBounds="True">
         <Grid>
             <Border x:Name="SecondaryBorder" CornerRadius="15" Background="White" Margin="0">
                 <StackPanel Background="Transparent">
-                    <!-- Top Bar -->
-                    
-                    <!-- Conteúdo principal -->
+                    <components:TopBarPrimeDocs x:Name="tbpInitialWindowTopBar" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="35"/>
                     <components:NewDocument x:Name="newDocumentControl" />
                     <components:OpenDocument x:Name="openDocumentControl"/>
 

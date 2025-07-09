@@ -4,7 +4,7 @@
              StartupUri="UI/InitialWindow.xaml">
     <Application.Resources>
         <!-- Paleta de Cores -->
-        <Color x:Key="PrimaryColor">#FF0003DC</Color>
+        <Color x:Key="PrimaryColor">#001BC9</Color>
         <Color x:Key="SecondaryColor">#FFB7B7B7</Color>
         <Color x:Key="AccentColor">#FF40A9FF</Color>
         <Color x:Key="ButtonHoverColor">#40FFFFFF</Color>

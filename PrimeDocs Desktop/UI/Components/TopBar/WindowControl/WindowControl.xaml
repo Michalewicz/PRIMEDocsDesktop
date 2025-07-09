@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="PrimeDocs_Desktop.WindowControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PrimeDocs_Desktop"
+             mc:Ignorable="d">
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+        <Button Focusable="False" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="50" BorderBrush="{x:Null}" Click="btInitialWindowMinimize_Click" Foreground="{x:Null}">
+            <Viewbox Stretch="Uniform">
+                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Resources/Icons/InitialWindow/minus.png"/>
+            </Viewbox>
+        </Button>
+        <Button x:Name="btMaximize" Focusable="False" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="50" BorderBrush="{x:Null}" Click="btInitialWindowMaximize_Click" Foreground="{x:Null}">
+            <Viewbox Stretch="Uniform">
+                <Image x:Name="imMaximize" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Resources/Icons/InitialWindow/maximize.png"/>
+            </Viewbox>
+        </Button>
+        <Button Style="{StaticResource CloseButtonStyle}" Focusable="False" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="50" BorderBrush="{x:Null}" Click="btInitialWindowClose_Click" Foreground="{x:Null}">
+            <Viewbox Stretch="Uniform">
+                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Resources/Icons/InitialWindow/close.png" Height="352" Width="228"/>
+            </Viewbox>
+        </Button>
+    </StackPanel>
+</UserControl>

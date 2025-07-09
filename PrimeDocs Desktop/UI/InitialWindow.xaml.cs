@@ -26,7 +26,6 @@ namespace PrimeDocs_Desktop
         public MainWindow()
         {
             InitializeComponent();
-            newDocumentControl.CollapsedChanged += NewDocumentControl_CollapsedChanged;
         }
         private void CollapseChange()
         {
@@ -35,12 +34,9 @@ namespace PrimeDocs_Desktop
             else
                 openDocumentControl.Margin = new Thickness(0, 0, 0, 0);
         }
-
         private void NewDocumentControl_CollapsedChanged(object sender, EventArgs e)
         {
             CollapseChange();
         }
-
-        
     }
 }
