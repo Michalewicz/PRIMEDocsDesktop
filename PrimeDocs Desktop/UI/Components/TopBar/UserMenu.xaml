@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PrimeDocs_Desktop.UI.Components"
-             mc:Ignorable="d" d:Height="30" d:Width="300">
-    <Grid HorizontalAlignment="Center" Width="340" Height="30">
-        <local:Profile d:BorderBrush="Yellow" d:BorderThickness="2" VerticalAlignment="Center" HorizontalAlignment="Left" Width="250" Height="30" Margin="23,0,0,0"/>
-        <local:Config d:BorderBrush="Yellow" d:BorderThickness="2" VerticalAlignment="Center" Height="30" Margin="290,0,20,0"/>
+             mc:Ignorable="d" d:Height="50" d:Width="350">
+    <Grid HorizontalAlignment="Center" Height="35">
+        <local:Profile d:BorderBrush="Yellow" d:BorderThickness="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,65,0"/>
+        <local:Config d:BorderBrush="Yellow" d:BorderThickness="2" VerticalAlignment="Center" Margin="290,0,20,0"/>
     </Grid>
 </UserControl>

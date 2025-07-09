@@ -6,8 +6,23 @@
              xmlns:local="clr-namespace:PrimeDocs_Desktop.UI.Components"
              mc:Ignorable="d">
     <Grid>
-        <Image Height="30"  Width="30" HorizontalAlignment="Right"  Source="/Resources/Icons/InitialWindow/profile.png" VerticalAlignment="Center" />
-        <TextBlock TextWrapping="Wrap" Text="Nome" FontFamily="Open Sans" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,50,0" FontSize="20" Foreground="White"/>
-        <Button Focusable="False" Style="{StaticResource ProfileConfigButtonStyle}" Height="30" d:Width="250" BorderBrush="{x:Null}" Click="btInitialWindowProfile_Click"/>
+        <Button Focusable="False"
+                Style="{StaticResource WindowControlButtonStyle}"
+                MinWidth="120"
+                MinHeight="35"
+                Click="btInitialWindowProfile_Click"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                ToolTip="Perfil">
+            <Grid>
+                <TextBlock Text="Nome"
+                           FontFamily="Open Sans"
+                           FontSize="20"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           Margin="0,0,40,0" HorizontalAlignment="Right"/>
+                <Image MaxHeight="30" MaxWidth="30" Source="/Resources/Icons/InitialWindow/profile.png" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,-0,0"/>
+            </Grid>
+        </Button>
     </Grid>
 </UserControl>

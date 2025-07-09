@@ -23,6 +23,7 @@ namespace PrimeDocs_Desktop.UI.Components
         public OpenDocument()
         {
             InitializeComponent();
+
         }
 
         private void rotateCollapseButton(Button button)

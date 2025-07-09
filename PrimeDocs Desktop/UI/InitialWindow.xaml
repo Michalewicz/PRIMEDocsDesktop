@@ -5,23 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:components="clr-namespace:PrimeDocs_Desktop.UI.Components"
         mc:Ignorable="d"
-        Icon="/Resources/Icons/PrimeDocs.ico"
-        Title="PrimeDocs" Height="800" Width="800" MinHeight="800" MinWidth="800"
+        Icon="/Resources/Icons/PrimeDocs.png"
+        Title="PrimeDocs" Height="800" Width="818" MinHeight="800" MinWidth="800"
         WindowStyle="None" AllowsTransparency="True" Background="Transparent">
     <WindowChrome.WindowChrome>
         <WindowChrome
             CaptionHeight="0"
-            ResizeBorderThickness="8"
+            ResizeBorderThickness="12"
             GlassFrameThickness="0"
             UseAeroCaptionButtons="False"/>
     </WindowChrome.WindowChrome>
-    <Border x:Name="MainBorder" BorderBrush="#FF0003DC" BorderThickness="2" CornerRadius="17" Background="White" ClipToBounds="True">
+    <Border x:Name="MainBorder" BorderBrush="#001BC9" BorderThickness="2" CornerRadius="13" Background="White" ClipToBounds="True" Margin="7">
         <Grid>
             <Border x:Name="SecondaryBorder" CornerRadius="15" Background="White" Margin="0">
                 <StackPanel Background="Transparent">
                     <components:TopBarPrimeDocs x:Name="tbpInitialWindowTopBar" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="35"/>
-                    <components:NewDocument x:Name="newDocumentControl" />
-                    <components:OpenDocument x:Name="openDocumentControl"/>
+                    <components:NewDocument x:Name="newDocumentControl" d:BorderBrush="Gray" d:BorderThickness="2" Padding="25,0,25,0" />
+                    <components:OpenDocument x:Name="openDocumentControl" d:BorderBrush="Gray" d:BorderThickness="2" Padding="25,0,25,0"/>
 
                 </StackPanel>
             </Border>

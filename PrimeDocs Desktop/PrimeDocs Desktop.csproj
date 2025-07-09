@@ -22,7 +22,7 @@
     <None Remove="Resources\Icons\InitialWindow\PrimeDocsBar.png" />
     <None Remove="Resources\Icons\InitialWindow\profile.png" />
     <None Remove="Resources\Icons\InitialWindow\TXT.png" />
-    <None Remove="Resources\Icons\PrimeDocs.ico" />
+    <None Remove="Resources\Icons\PrimeDocs.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,7 +45,7 @@
     <Resource Include="Resources\Icons\InitialWindow\PrimeDocsBar.png" />
     <Resource Include="Resources\Icons\InitialWindow\profile.png" />
     <Resource Include="Resources\Icons\InitialWindow\TXT.png" />
-    <Resource Include="Resources\Icons\PrimeDocs.ico" />
+    <Resource Include="Resources\Icons\PrimeDocs.png" />
   </ItemGroup>
 
 </Project>

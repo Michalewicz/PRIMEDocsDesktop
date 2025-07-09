@@ -11,8 +11,8 @@
     <Border Background="#001BC9" CornerRadius="7" ClipToBounds="True">
         <Grid Background="Transparent" Height="35" VerticalAlignment="Top" ClipToBounds="True">
             <TextBlock Name="tbTopBarTitle" TextWrapping="Wrap" Text="Title" FontFamily="Open Sans" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="37,0,0,0" FontSize="20" Foreground="White"/>
-            <local:UserMenu d:BorderBrush="Red" d:BorderThickness="2" HorizontalAlignment="Right" Margin="286,0,160,0" Height="33" VerticalAlignment="Top"/>
-            <local:WindowControl x:Name="windowControlTopBar" d:BorderBrush="Red" d:BorderThickness="2" Margin="630,4,10,0" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+            <local:UserMenu d:BorderBrush="Red" d:BorderThickness="2" HorizontalAlignment="Right" Margin="286,0,155,0"/>
+            <local:WindowControl x:Name="windowControlTopBar" d:BorderBrush="Red" d:BorderThickness="2" Margin="630,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Right" Height="35" Width="155" MinWidth="155"/>
             <Image Margin="10,5,0,5" Source="/Resources/Icons/InitialWindow/PrimeDocsBar.png" Stretch="Fill" Width="17" RenderTransformOrigin="-1.844,-8.906" HorizontalAlignment="Left" Height="25"/>
         </Grid>
     </Border>

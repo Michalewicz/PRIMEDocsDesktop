@@ -6,18 +6,18 @@
              xmlns:local="clr-namespace:PrimeDocs_Desktop.UI.Components"
              mc:Ignorable="d">
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-        <Button Focusable="False" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="50" BorderBrush="{x:Null}" Click="btInitialWindowMinimize_Click" Foreground="{x:Null}">
-            <Viewbox Stretch="Uniform">
+        <Button d:BorderBrush="Yellow" d:BorderThickness="2" Style="{StaticResource WindowControlButtonStyle}" Focusable="False" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="50" BorderBrush="{x:Null}" Click="btInitialWindowMinimize_Click" Foreground="{x:Null}" ToolTip="Minimizar">
+            <Viewbox Stretch="Uniform" Height="25" Width="25">
                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Resources/Icons/InitialWindow/minus.png"/>
             </Viewbox>
         </Button>
-        <Button x:Name="btMaximize" Focusable="False" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="50" BorderBrush="{x:Null}" Click="btInitialWindowMaximize_Click" Foreground="{x:Null}">
-            <Viewbox Stretch="Uniform">
+        <Button d:BorderBrush="Yellow" d:BorderThickness="2" Style="{StaticResource WindowControlButtonStyle}" x:Name="btMaximize" Focusable="False" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="50" BorderBrush="{x:Null}" Click="btInitialWindowMaximize_Click" Foreground="{x:Null}" ToolTip="Maximizar">
+            <Viewbox Stretch="Uniform" Height="25" Width="25">
                 <Image x:Name="imMaximize" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Resources/Icons/InitialWindow/maximize.png"/>
             </Viewbox>
         </Button>
-        <Button Style="{StaticResource CloseButtonStyle}" Focusable="False" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="50" BorderBrush="{x:Null}" Click="btInitialWindowClose_Click" Foreground="{x:Null}">
-            <Viewbox Stretch="Uniform">
+        <Button d:BorderBrush="Yellow" d:BorderThickness="2" Style="{StaticResource WindowControlCloseButtonStyle}" Focusable="False" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="50" BorderBrush="{x:Null}" Click="btInitialWindowClose_Click" Foreground="{x:Null}" ToolTip="Fechar">
+            <Viewbox Stretch="Uniform" Height="25" Width="25">
                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Resources/Icons/InitialWindow/close.png" Height="352" Width="228"/>
             </Viewbox>
         </Button>

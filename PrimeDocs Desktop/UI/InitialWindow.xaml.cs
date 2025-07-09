@@ -26,6 +26,7 @@ namespace PrimeDocs_Desktop
         public MainWindow()
         {
             InitializeComponent();
+            newDocumentControl.CollapsedChanged += NewDocumentControl_CollapsedChanged;
         }
         private void CollapseChange()
         {

@@ -4,10 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PrimeDocs_Desktop.UI.Components"
-             mc:Ignorable="d" >
+             mc:Ignorable="d" d:Height="35" d:Width="35" >
     <Grid>
-        <Button Focusable="False" Style="{StaticResource ProfileConfigButtonStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="{x:Null}" Click="btInitialWindowConfig_Click">
-            <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="/Resources/Icons/InitialWindow/config.png" Stretch="Fill"/>
+        <Button Focusable="False" Style="{StaticResource WindowControlButtonStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="{x:Null}" Click="btInitialWindowConfig_Click" ToolTip="Configurações" MinHeight="35" MaxHeight="35" MaxWidth="35" MinWidth="35">
+            <Grid>
+                <Image HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="30" MaxHeight="30" MaxWidth="30" MinWidth="30" Source="/Resources/Icons/InitialWindow/config.png"/>
+            </Grid>
         </Button>
     </Grid>
 </UserControl>
