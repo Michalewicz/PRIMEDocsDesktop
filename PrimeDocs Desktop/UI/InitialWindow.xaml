@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PrimeDocs_Desktop"
+        xmlns:components="clr-namespace:PrimeDocs_Desktop.UI.Components"
         mc:Ignorable="d"
         Icon="/Resources/Icons/PrimeDocs.ico"
+
         Title="PrimeDocs" Height="800" Width="800" MinHeight="800" MinWidth="800"
         SizeChanged="Window_SizeChanged"
         WindowStyle="None" AllowsTransparency="True" Background="Transparent">
@@ -20,107 +21,12 @@
         <Grid>
             <Border x:Name="SecondaryBorder" CornerRadius="15" Background="White" Margin="0">
                 <StackPanel Background="Transparent">
-                    <UserControl Background="Transparent">
-                        <Border CornerRadius="13" ClipToBounds="True">
-                        <local:TopBarPrimeDocs x:Name="tbpInitialWindowTopBar" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="35"/>
-                    </Border>
-                    </UserControl>
-                    <!--
-                    <Border x:Name="brInitialWindowTopBar" Background="#FF0003DC" CornerRadius="13" Padding="10" MouseDown="brInitialWindowTopBar_MouseDown">
-                        <Grid x:Name="grInitialWindowTopBar" Height="50" Background="#FF0003DC">
-                            <TextBlock x:Name="tbInitialWindowTopTitle" TextWrapping="Wrap" Text="Início" TextAlignment="Center" Margin="10,8,0,0" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="25" Height="30" FontFamily="Open Sans"/>
-                            <Grid Margin="0,2,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Height="50" Width="511">
-                                --><!--
-                                <TextBlock x:Name="tbInitialWindowName" TextWrapping="Wrap" Text="Nome" TextAlignment="Right" Foreground="White" FontSize="25" Margin="23,6,246,0" FontFamily="Open Sans" VerticalAlignment="Top"/>
-                                <Button x:Name="btInitialWindowProfile" Style="{StaticResource ProfileConfigButtonStyle}" HorizontalAlignment="Left" Margin="290,0,0,0" VerticalAlignment="Center" Height="30" Width="30" BorderBrush="{x:Null}" Click="btInitialWindowProfile_Click" Padding="20,20,20,20" RenderTransformOrigin="0.514,0.588" Grid.IsSharedSizeScope="True">
-                                    <Button.Background>
-                                        <ImageBrush ImageSource="/Resources/Icons/InitialWindow/profile.png" Stretch="Fill"/>
-                                    </Button.Background>
-                                </Button>--><!--
-                                <local:Profile Margin="-46,7,230,7" Height="36" />
-                                <local:Config Margin="286,7,189,7" />
-                                <local:WindowControl Margin="358,0,10,0" VerticalAlignment="Center" HorizontalAlignment="Right" />
-                                   -->
-                                <!--<Button x:Name="btInitialWindowConfig" Style="{StaticResource ProfileConfigButtonStyle}" HorizontalAlignment="Left" Margin="339,0,0,0" VerticalAlignment="Center" Height="30" Width="30" BorderBrush="{x:Null}" Click="btInitialWindowConfig_Click">
-                                    <Button.Background>
-                                        <ImageBrush ImageSource="/Resources/Icons/InitialWindow/config.png" Stretch="Fill"/>
-                                    </Button.Background>
-                                </Button>-->
-                                <!--
-                                <Button Focusable="False" x:Name="btInitialWindowMinimize" HorizontalAlignment="Left" Margin="389,0,0,0" VerticalAlignment="Center" Height="30" Width="30" BorderBrush="{x:Null}" Click="btInitialWindowMinimize_Click" Foreground="{x:Null}">
-                                    <Button.Background>
-                                        <ImageBrush ImageSource="/Resources/Icons/InitialWindow/minus.png"/>
-                                    </Button.Background>
-                                </Button>
-                                <Button Focusable="False" x:Name="btInitialWindowMaximize" HorizontalAlignment="Left" Margin="432,0,0,0" VerticalAlignment="Center" Height="30" Width="30" BorderBrush="{x:Null}" Click="btInitialWindowMaximize_Click" Cursor="Hand">
-                                    <Button.Background>
-                                        <ImageBrush x:Name="imgMaximize" ImageSource="/Resources/Icons/InitialWindow/maximize.png"/>
-                                    </Button.Background>
-                                </Button>
-                                <Button Focusable="False" x:Name="btInitialWindowClose" Style="{StaticResource CloseButtonStyle}" HorizontalAlignment="Left" Margin="479,0,0,0" VerticalAlignment="Center" Height="22" Width="22" BorderBrush="{x:Null}" Click="btInitialWindowClose_Click">
-                                    <Button.Background>
-                                        <ImageBrush ImageSource="/Resources/Icons/InitialWindow/close.png"/>
-                                    </Button.Background>
-                                </Button>-->
-                           <!-- </Grid>
-                        </Grid>
-                    </Border>-->
+                    <components:TopBarPrimeDocs x:Name="tbpInitialWindowTopBar" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="35"/>
+                    <components:NewDocument x:Name="newDocumentControl" />
+                    <components:OpenDocument x:Name="openDocumentControl"/>
+
                 </StackPanel>
             </Border>
-            <Grid x:Name="grInitialWindowDocumentCreation" Margin="10,42,10,0" Height="279" VerticalAlignment="Top">
-                <TextBlock x:Name="tbInitialWindowDocumentCreation" TextWrapping="Wrap" Text="Criação de Documentos" Margin="0,10,0,234" FontSize="25" HorizontalAlignment="Left" Width="780" FontFamily="Open Sans"/>
-                <Rectangle x:Name="rtInitialWindowLineDocument" Height="2" Margin="0,44,0,0" Stroke="#E5CECECE" VerticalAlignment="Top"/>
-                <Grid x:Name="grInitialWindowDocumentCreationNew" Margin="10,50,10,0" Height="230" VerticalAlignment="Top">
-                    <TextBlock x:Name="tbInitialWindowDocumentA4" TextWrapping="Wrap" TextAlignment="Center" Text="Novo documento A4" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="130" Margin="10,180,0,0" FontFamily="Open Sans"/>
-                    <Button x:Name="btInitialWindowDocumentA4" Style="{StaticResource DocumentButtonStyle}" Margin="10,5,0,0" Click="btInitialWindowDocumentA4_Click" HorizontalAlignment="Left" Width="130" Height="170" VerticalAlignment="Top" BorderBrush="{x:Null}">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/Resources/Icons/InitialWindow/A4.png"/>
-                        </Button.Background>
-                    </Button>
-
-                    <TextBlock x:Name="tbInitialWindowDocumentText" TextWrapping="Wrap" TextAlignment="Center" Text="Novo documento de texto" Margin="170,180,0,0" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="130" FontFamily="Open Sans"/>
-                    <Button x:Name="btInitialWindowDocumentText" Style="{StaticResource DocumentButtonStyle}" Margin="170,5,0,0" Click="btInitialWindowDocumentText_Click" HorizontalAlignment="Left" Width="130" Height="170" VerticalAlignment="Top" BorderBrush="{x:Null}">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/Resources/Icons/InitialWindow/TXT.png"/>
-                        </Button.Background>
-                    </Button>
-
-                    <TextBlock x:Name="tbInitialWindowDocumentMD" TextWrapping="Wrap" TextAlignment="Center" Text="Novo documento MarkDown" Margin="330,180,0,0" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="130" FontFamily="Open Sans"/>
-                    <Button x:Name="btInitialWindowDocumentMD" Style="{StaticResource DocumentButtonStyle}" Margin="330,5,0,0" Click="btInitialWindowDocumentMD_Click" HorizontalAlignment="Left" Width="130" Height="170" VerticalAlignment="Top" BorderBrush="{x:Null}">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/Resources/Icons/InitialWindow/MD.png"/>
-                        </Button.Background>
-                    </Button>
-                </Grid>
-                <Button x:Name="btInitialWindowDocumentCreationCollapse" Margin="0,10,0,0" Click="btInitialWindowDocumentCreationCollapse_Click"  VerticalAlignment="Top" HorizontalAlignment="Right" Height="34" Width="35" Cursor="Hand">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/Resources/Icons/InitialWindow/collapse.png"/>
-                    </Button.Background>
-                </Button>
-            </Grid>
-            <Grid x:Name="grInitialWindowOpenDocument" Margin="10,344,10,0" Height="279" VerticalAlignment="Top">
-                <TextBlock x:Name="tbInitialWindowOpenDocument" TextWrapping="Wrap" Text="Abrir Documentos" FontSize="25" HorizontalAlignment="Left" Width="780" Margin="0,9,0,0" FontFamily="Open Sans" Height="35" VerticalAlignment="Top"/>
-                <Rectangle x:Name="rtInitialWindowLineOpenDocument" Height="2" Margin="0,43,0,0" Stroke="#E5CECECE" VerticalAlignment="Top"/>
-                <Button x:Name="btInitialWindowOpenDocumentCollapse" Margin="0,9,0,0" Click="btInitialWindowOpenDocumentCollapse_Click" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/Resources/Icons/InitialWindow/collapse.png"/>
-                    </Button.Background>
-                </Button>
-                <Grid x:Name="grInitialWindowOpenDocumentNew" Margin="10,50,10,0" Height="230" VerticalAlignment="Top">
-                    <TextBox TextWrapping="Wrap" Margin="10,5,150,205"/>
-                    <Button Content="Abrir..." Margin="0,5,10,0" VerticalAlignment="Top" Height="20" HorizontalAlignment="Right" Width="135"/>
-                    <TextBlock x:Name="tbInitialWindowOpenDocumentFilter" TextWrapping="Wrap" Text="Filtros de pesquisa" FontSize="12.5" HorizontalAlignment="Left" Width="687" Margin="10,44,0,0" FontFamily="Open Sans" Height="17" VerticalAlignment="Top"/>
-                    <Rectangle x:Name="rtInitialWindowLineOpenDocumentFilter" Height="2" Margin="10,60,10,0" Stroke="#E5CECECE" VerticalAlignment="Top"/>
-                    <Button x:Name="btInitialWindowOpenDocumentCollapseFilter" Margin="0,26,10,0" Click="btInitialWindowOpenDocumentCollapseFilter_Click" Height="34" VerticalAlignment="Top" HorizontalAlignment="Right" Width="35">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/Resources/Icons/InitialWindow/collapse.png"/>
-                        </Button.Background>
-                    </Button>
-
-                </Grid>
-
-
-            </Grid>
         </Grid>
     </Border>
 </Window>
