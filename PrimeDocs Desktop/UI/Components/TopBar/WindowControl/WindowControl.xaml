@@ -11,14 +11,14 @@
                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Resources/Icons/InitialWindow/minus.png"/>
             </Viewbox>
         </Button>
-        <Button Focusable="False" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="50" BorderBrush="{x:Null}" Click="btInitialWindowMaximize_Click" Foreground="{x:Null}">
+        <Button x:Name="btMaximize" Focusable="False" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="50" BorderBrush="{x:Null}" Click="btInitialWindowMaximize_Click" Foreground="{x:Null}">
             <Viewbox Stretch="Uniform">
-                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Resources/Icons/InitialWindow/maximize.png"/>
+                <Image x:Name="imMaximize" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Resources/Icons/InitialWindow/maximize.png"/>
             </Viewbox>
         </Button>
         <Button Style="{StaticResource CloseButtonStyle}" Focusable="False" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="50" BorderBrush="{x:Null}" Click="btInitialWindowClose_Click" Foreground="{x:Null}">
             <Viewbox Stretch="Uniform">
-                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Resources/Icons/InitialWindow/close.png"/>
+                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Resources/Icons/InitialWindow/close.png" Height="352" Width="228"/>
             </Viewbox>
         </Button>
     </StackPanel>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PrimeDocs_Desktop"
         mc:Ignorable="d"
         Icon="/Resources/Icons/PrimeDocs.ico"
-        Title="PrimeDocs" Height="800" Width="800" MinHeight="600" MinWidth="700"
+        Title="PrimeDocs" Height="800" Width="800" MinHeight="800" MinWidth="800"
         SizeChanged="Window_SizeChanged"
         WindowStyle="None" AllowsTransparency="True" Background="Transparent">
     <WindowChrome.WindowChrome>
@@ -20,7 +20,11 @@
         <Grid>
             <Border x:Name="SecondaryBorder" CornerRadius="15" Background="White" Margin="0">
                 <StackPanel Background="Transparent">
-                    <local:TopBarPrimeDocs x:Name="tbpInitialWindowTopBar" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+                    <UserControl Background="Transparent">
+                        <Border CornerRadius="13" ClipToBounds="True">
+                        <local:TopBarPrimeDocs x:Name="tbpInitialWindowTopBar" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="35"/>
+                    </Border>
+                    </UserControl>
                     <!--
                     <Border x:Name="brInitialWindowTopBar" Background="#FF0003DC" CornerRadius="13" Padding="10" MouseDown="brInitialWindowTopBar_MouseDown">
                         <Grid x:Name="grInitialWindowTopBar" Height="50" Background="#FF0003DC">

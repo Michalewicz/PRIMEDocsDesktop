@@ -7,9 +7,7 @@
              mc:Ignorable="d" >
     <Grid>
         <Button Focusable="False" Style="{StaticResource ProfileConfigButtonStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="{x:Null}" Click="btInitialWindowConfig_Click">
-            <Viewbox Stretch="Uniform">
-                <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="/Resources/Icons/InitialWindow/config.png"/>
-            </Viewbox>
+            <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="/Resources/Icons/InitialWindow/config.png" Stretch="Fill"/>
         </Button>
     </Grid>
 </UserControl>
