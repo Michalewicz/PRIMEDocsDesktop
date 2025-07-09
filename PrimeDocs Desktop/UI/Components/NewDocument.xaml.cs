@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
@@ -20,6 +21,8 @@ namespace PrimeDocs_Desktop.UI.Components
     /// </summary>
     public partial class NewDocument : UserControl
     {
+        public bool documentCollapsed = false;
+
         public NewDocument()
         {
             InitializeComponent();
@@ -58,18 +61,26 @@ namespace PrimeDocs_Desktop.UI.Components
             button.RenderTransform = rotation;
             button.RenderTransformOrigin = new Point(0.5, 0.5);
         }
+        public event EventHandler CollapsedChanged;
+
         private void btInitialWindowDocumentCreationCollapse_Click(object sender, RoutedEventArgs e)
         {
-            rotateCollapseButton(btInitialWindowDocumentCreationCollapse1);
+            rotateCollapseButton(btInitialWindowDocumentCreationCollapse);
 
-            if (grInitialWindowDocumentCreationNew1.Visibility == Visibility.Visible)
+            if (grInitialWindowDocumentCreationNew.Visibility == Visibility.Visible)
             {
-                grInitialWindowDocumentCreationNew1.Visibility = Visibility.Collapsed;
+                documentCollapsed = true;
+                grInitialWindowDocumentCreationNew.Visibility = Visibility.Collapsed;
             }
             else
             {
-                grInitialWindowDocumentCreationNew1.Visibility = Visibility.Visible;
+                documentCollapsed = false;
+                grInitialWindowDocumentCreationNew.Visibility = Visibility.Visible;
             }
+
+            // Dispara evento
+            CollapsedChanged?.Invoke(this, EventArgs.Empty);
         }
-    } 
+
+    }
 }

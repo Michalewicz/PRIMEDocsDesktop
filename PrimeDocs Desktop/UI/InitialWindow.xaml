@@ -7,60 +7,17 @@
         mc:Ignorable="d"
         Icon="/Resources/Icons/PrimeDocs.ico"
         Title="PrimeDocs" Height="857" Width="800" MinHeight="600" MinWidth="700"
-        SizeChanged="Window_SizeChanged"
-        WindowStyle="None" AllowsTransparency="True" Background="Transparent">
-    <WindowChrome.WindowChrome>
-        <WindowChrome
-            CaptionHeight="0"
-            ResizeBorderThickness="8"
-            GlassFrameThickness="0"
-            UseAeroCaptionButtons="False"/>
-    </WindowChrome.WindowChrome>
+        Background="Transparent">
     <Border x:Name="MainBorder" BorderBrush="#FF0003DC" BorderThickness="2" CornerRadius="17" Background="White" ClipToBounds="True">
         <Grid>
             <Border x:Name="SecondaryBorder" CornerRadius="15" Background="White" Margin="0">
                 <StackPanel Background="Transparent">
                     <!-- Top Bar -->
-                    <Border x:Name="brInitialWindowTopBar" Background="#FF0003DC" CornerRadius="13" Padding="10" MouseDown="brInitialWindowTopBar_MouseDown">
-                        <Grid x:Name="grInitialWindowTopBar" Height="50" Background="#FF0003DC">
-                            <TextBlock x:Name="tbInitialWindowTopTitle" TextWrapping="Wrap" Text="Início" TextAlignment="Center" Margin="10,8,0,0" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="25" Height="30" FontFamily="Open Sans"/>
-                            <Grid Margin="0,2,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Height="50" Width="511">
-                                <TextBlock x:Name="tbInitialWindowName" TextWrapping="Wrap" Text="Nome" TextAlignment="Right" Foreground="White" FontSize="25" Margin="23,6,246,0" FontFamily="Open Sans" VerticalAlignment="Top"/>
-                                <Button x:Name="btInitialWindowProfile" Style="{StaticResource ProfileConfigButtonStyle}" HorizontalAlignment="Left" Margin="290,0,0,0" VerticalAlignment="Center" Height="30" Width="30" BorderBrush="{x:Null}" Click="btInitialWindowProfile_Click" Padding="20,20,20,20" RenderTransformOrigin="0.514,0.588" Grid.IsSharedSizeScope="True">
-                                    <Button.Background>
-                                        <ImageBrush ImageSource="/Resources/Icons/InitialWindow/profile.png" Stretch="Fill"/>
-                                    </Button.Background>
-                                </Button>
-                                <Button x:Name="btInitialWindowConfig" Style="{StaticResource ProfileConfigButtonStyle}" HorizontalAlignment="Left" Margin="339,0,0,0" VerticalAlignment="Center" Height="30" Width="30" BorderBrush="{x:Null}" Click="btInitialWindowConfig_Click">
-                                    <Button.Background>
-                                        <ImageBrush ImageSource="/Resources/Icons/InitialWindow/config.png" Stretch="Fill"/>
-                                    </Button.Background>
-                                </Button>
-                                <Button Focusable="False" x:Name="btInitialWindowMinimize" HorizontalAlignment="Left" Margin="389,0,0,0" VerticalAlignment="Center" Height="30" Width="30" BorderBrush="{x:Null}" Click="btInitialWindowMinimize_Click" Foreground="{x:Null}">
-                                    <Button.Background>
-                                        <ImageBrush ImageSource="/Resources/Icons/InitialWindow/minus.png"/>
-                                    </Button.Background>
-                                </Button>
-                                <Button Focusable="False" x:Name="btInitialWindowMaximize" HorizontalAlignment="Left" Margin="432,0,0,0" VerticalAlignment="Center" Height="30" Width="30" BorderBrush="{x:Null}" Click="btInitialWindowMaximize_Click" Cursor="Hand">
-                                    <Button.Background>
-                                        <ImageBrush x:Name="imgMaximize" ImageSource="/Resources/Icons/InitialWindow/maximize.png"/>
-                                    </Button.Background>
-                                </Button>
-                                <Button Focusable="False" x:Name="btInitialWindowClose" Style="{StaticResource CloseButtonStyle}" HorizontalAlignment="Left" Margin="479,0,0,0" VerticalAlignment="Center" Height="22" Width="22" BorderBrush="{x:Null}" Click="btInitialWindowClose_Click">
-                                    <Button.Background>
-                                        <ImageBrush ImageSource="/Resources/Icons/InitialWindow/close.png"/>
-                                    </Button.Background>
-                                </Button>
-                            </Grid>
-                        </Grid>
-                    </Border>
+                    
                     <!-- Conteúdo principal -->
-                    <components:NewDocument x:Name="newDocumentControl"/>
+                    <components:NewDocument x:Name="newDocumentControl" />
                     <components:OpenDocument x:Name="openDocumentControl"/>
-                    <UserControl MinHeight="54">
-                        <Grid>
-                        </Grid>
-                    </UserControl>
+
                 </StackPanel>
             </Border>
         </Grid>
