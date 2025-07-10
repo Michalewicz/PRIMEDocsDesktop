@@ -1,24 +1,82 @@
-﻿<UserControl x:Class="PrimeDocs_Desktop.UI.Components.WindowControl"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:PrimeDocs_Desktop.UI.Components"
-             mc:Ignorable="d">
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-        <Button d:BorderBrush="Yellow" d:BorderThickness="2" Style="{StaticResource WindowControlButtonStyle}" Focusable="False" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="50" BorderBrush="{x:Null}" Click="btInitialWindowMinimize_Click" Foreground="{x:Null}" ToolTip="Minimizar">
-            <Viewbox Stretch="Uniform" Height="25" Width="25">
-                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Resources/Icons/InitialWindow/minus.png"/>
+﻿<UserControl
+    x:Class="PrimeDocs_Desktop.UI.Components.WindowControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:PrimeDocs_Desktop.UI.Components"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+        <Button
+            Width="50"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Stretch"
+            d:BorderBrush="Yellow"
+            d:BorderThickness="2"
+            Background="Transparent"
+            BorderBrush="{x:Null}"
+            Click="btInitialWindowMinimize_Click"
+            Focusable="False"
+            Foreground="{x:Null}"
+            Style="{StaticResource WindowControlButtonStyle}"
+            ToolTip="Minimizar">
+            <Viewbox
+                Width="25"
+                Height="25"
+                Stretch="Uniform">
+                <Image
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Source="/Resources/Icons/InitialWindow/minus.png" />
             </Viewbox>
         </Button>
-        <Button d:BorderBrush="Yellow" d:BorderThickness="2" Style="{StaticResource WindowControlButtonStyle}" x:Name="btMaximize" Focusable="False" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="50" BorderBrush="{x:Null}" Click="btInitialWindowMaximize_Click" Foreground="{x:Null}" ToolTip="Maximizar">
-            <Viewbox Stretch="Uniform" Height="25" Width="25">
-                <Image x:Name="imMaximize" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Resources/Icons/InitialWindow/maximize.png"/>
+        <Button
+            x:Name="btMaximize"
+            Width="50"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Stretch"
+            d:BorderBrush="Yellow"
+            d:BorderThickness="2"
+            BorderBrush="{x:Null}"
+            Click="btInitialWindowMaximize_Click"
+            Focusable="False"
+            Foreground="{x:Null}"
+            Style="{StaticResource WindowControlButtonStyle}"
+            ToolTip="Maximizar">
+            <Viewbox
+                Width="25"
+                Height="25"
+                Stretch="Uniform">
+                <Image
+                    x:Name="imMaximize"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Source="/Resources/Icons/InitialWindow/maximize.png" />
             </Viewbox>
         </Button>
-        <Button d:BorderBrush="Yellow" d:BorderThickness="2" Style="{StaticResource WindowControlCloseButtonStyle}" Focusable="False" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="50" BorderBrush="{x:Null}" Click="btInitialWindowClose_Click" Foreground="{x:Null}" ToolTip="Fechar">
-            <Viewbox Stretch="Uniform" Height="25" Width="25">
-                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Resources/Icons/InitialWindow/close.png" Height="352" Width="228"/>
+        <Button
+            Width="50"
+            x:Name="btClose"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Stretch"
+            d:BorderBrush="Yellow"
+            d:BorderThickness="2"
+            BorderBrush="{x:Null}"
+            Click="btInitialWindowClose_Click"
+            Focusable="False"
+            Foreground="{x:Null}"
+            Style="{StaticResource WindowControlCloseNormalButtonStyle}"
+            ToolTip="Fechar">
+            <Viewbox
+                Width="25"
+                Height="25"
+                Stretch="Uniform">
+                <Image
+                    Width="228"
+                    Height="352"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Source="/Resources/Icons/InitialWindow/close.png" />
             </Viewbox>
         </Button>
     </StackPanel>

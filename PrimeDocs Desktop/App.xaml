@@ -1,138 +1,114 @@
-﻿<Application x:Class="PrimeDocs_Desktop.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-             StartupUri="UI/InitialWindow.xaml">
+﻿<Application
+    x:Class="PrimeDocs_Desktop.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    StartupUri="UI/InitialWindow.xaml">
     <Application.Resources>
-        <!-- Paleta de Cores -->
+        <!--  Paleta de Cores  -->
         <Color x:Key="PrimaryColor">#001BC9</Color>
         <Color x:Key="SecondaryColor">#FFB7B7B7</Color>
         <Color x:Key="AccentColor">#FF40A9FF</Color>
         <Color x:Key="ButtonHoverColor">#40FFFFFF</Color>
         <Color x:Key="ButtonPressedColor">#80FFFFFF</Color>
         <Color x:Key="ButtonDisabledColor">#40AAAAAA</Color>
-        <Color x:Key="CloseButtonHoverColor">#80FF3B30</Color> <!-- 50% de opacidade -->
+        <Color x:Key="CloseButtonHoverColor">#80FF3B30</Color>
+        <!--  50% de opacidade  -->
 
-        <!-- Brushes -->
-        <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}"/>
-        <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource SecondaryColor}"/>
-        <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}"/>
-        <SolidColorBrush x:Key="ButtonHoverBrush" Color="{StaticResource ButtonHoverColor}"/>
-        <SolidColorBrush x:Key="ButtonPressedBrush" Color="{StaticResource ButtonPressedColor}"/>
-        <SolidColorBrush x:Key="ButtonDisabledBrush" Color="{StaticResource ButtonDisabledColor}"/>
-        <SolidColorBrush x:Key="CloseButtonHoverBrush" Color="{StaticResource CloseButtonHoverColor}"/>
+        <!--  Brushes  -->
+        <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}" />
+        <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource SecondaryColor}" />
+        <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}" />
+        <SolidColorBrush x:Key="ButtonHoverBrush" Color="{StaticResource ButtonHoverColor}" />
+        <SolidColorBrush x:Key="ButtonPressedBrush" Color="{StaticResource ButtonPressedColor}" />
+        <SolidColorBrush x:Key="ButtonDisabledBrush" Color="{StaticResource ButtonDisabledColor}" />
+        <SolidColorBrush x:Key="CloseButtonHoverBrush" Color="{StaticResource CloseButtonHoverColor}" />
 
-        <!-- Fonte padrão -->
+        <!--  Fonte padrão  -->
         <Style TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="Open Sans"/>
-            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontFamily" Value="Open Sans" />
+            <Setter Property="Foreground" Value="Black" />
         </Style>
 
-        <!-- Estilo base para Button (sem arredondamento no hover) -->
+        <!--  Estilo base para Button (sem arredondamento no hover)  -->
         <Style TargetType="Button">
-            <Setter Property="FontFamily" Value="Open Sans"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Background" Value="{x:Null}"/>
-            <Setter Property="BorderBrush" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Padding" Value="10,5"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="FontFamily" Value="Open Sans" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="{x:Null}" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="10,5" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Grid>
-                            <!-- Imagem de fundo -->
-                            <Border x:Name="ImageBorder"
-                                    Background="{TemplateBinding Background}"
-                                    CornerRadius="0"/>
-                            <!-- Overlay para hover/press/disabled -->
-                            <Border x:Name="Overlay"
-                                    Background="Transparent"
-                                    CornerRadius="0"/>
-                            <!-- Borda visual -->
-                            <Border x:Name="BorderVisual"
-                                    BorderBrush="{TemplateBinding BorderBrush}"
-                                    BorderThickness="{TemplateBinding BorderThickness}"
-                                    CornerRadius="0"
-                                    Background="Transparent"/>
-                            <!-- Conteúdo -->
-                            <ContentPresenter HorizontalAlignment="Center"
-                                              VerticalAlignment="Center"/>
+                            <!--  Imagem de fundo  -->
+                            <Border
+                                x:Name="ImageBorder"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="0" />
+                            <!--  Overlay para hover/press/disabled  -->
+                            <Border
+                                x:Name="Overlay"
+                                Background="Transparent"
+                                CornerRadius="0" />
+                            <!--  Borda visual  -->
+                            <Border
+                                x:Name="BorderVisual"
+                                Background="Transparent"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="0" />
+                            <!--  Conteúdo  -->
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="Overlay" Property="Background" Value="{StaticResource ButtonHoverBrush}"/>
-                                <Setter TargetName="BorderVisual" Property="BorderBrush" Value="{StaticResource AccentBrush}"/>
-                                <Setter TargetName="BorderVisual" Property="BorderThickness" Value="2"/>
+                                <Setter TargetName="Overlay" Property="Background" Value="{StaticResource ButtonHoverBrush}" />
+                                <Setter TargetName="BorderVisual" Property="BorderBrush" Value="{StaticResource AccentBrush}" />
+                                <Setter TargetName="BorderVisual" Property="BorderThickness" Value="2" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="Overlay" Property="Background" Value="{StaticResource ButtonPressedBrush}"/>
+                                <Setter TargetName="Overlay" Property="Background" Value="{StaticResource ButtonPressedBrush}" />
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
-                                <Setter TargetName="Overlay" Property="Background" Value="{StaticResource ButtonDisabledBrush}"/>
-                                <Setter Property="Foreground" Value="Gray"/>
+                                <Setter TargetName="Overlay" Property="Background" Value="{StaticResource ButtonDisabledBrush}" />
+                                <Setter Property="Foreground" Value="Gray" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
-        <!-- Style para minimizar/maximizar -->
+        <!--  Style para minimizar/maximizar  -->
         <Style x:Key="WindowControlButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Padding" Value="0"/>
-            <Setter Property="Cursor" Value="Arrow"/>
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Cursor" Value="Arrow" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border x:Name="border"
-                        Background="{TemplateBinding Background}"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Border
+                            x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <!-- Novo hover: overlay branco translúcido -->
-                                <Setter TargetName="border" Property="Background" Value="#26FFFFFF"/>
+                                <!--  Novo hover: overlay branco translúcido  -->
+                                <Setter TargetName="border" Property="Background" Value="#26FFFFFF" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#5779D2"/>
+                                <Setter TargetName="border" Property="Background" Value="#5779D2" />
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Opacity" Value="0.5"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        
-        <!-- Style para o botão de fechar -->
-        <Style x:Key="WindowControlCloseButtonStyle" TargetType="Button" BasedOn="{StaticResource WindowControlButtonStyle}">
-            <Setter Property="Cursor" Value="Arrow"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border x:Name="border"
-                                Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="0,11,8,0">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#E81123"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#F16F7A"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Opacity" Value="0.5"/>
+                                <Setter Property="Opacity" Value="0.5" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -140,121 +116,196 @@
             </Setter>
         </Style>
 
-        
+        <!--  Style para o botão de fechar "minimizado"  -->
+        <Style
+            x:Key="WindowControlCloseNormalButtonStyle"
+            BasedOn="{StaticResource WindowControlButtonStyle}"
+            TargetType="Button">
+            <Setter Property="Cursor" Value="Arrow" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="0,11,8,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#E81123" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#F16F7A" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.5" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
-        <!-- Estilo para botões de criar documentos (com bordas arredondadas) -->
+        <!--  Style para o botão de fechar "maximizado" -->
+        <Style
+            x:Key="WindowControlCloseMaximizedButtonStyle"
+            BasedOn="{StaticResource WindowControlButtonStyle}"
+            TargetType="Button">
+            <Setter Property="Cursor" Value="Arrow" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#E81123" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#F16F7A" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.5" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+
+        <!--  Estilo para botões de criar documentos (com bordas arredondadas)  -->
         <Style x:Key="DocumentButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="#FFCCCCCC"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="#FFCCCCCC" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Cursor" Value="Hand" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Grid>
-                            <Border x:Name="border"
-                             Background="{TemplateBinding Background}"
-                             BorderBrush="{TemplateBinding BorderBrush}"
-                             BorderThickness="{TemplateBinding BorderThickness}"
-                             CornerRadius="8">
-                                <Image x:Name="img"
-                                Source="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}"
-                                Stretch="UniformToFill"
-                                Width="{TemplateBinding Width}"
-                                Height="{TemplateBinding Height}"/>
-                            </Border>
-                            <Border x:Name="hoverOverlay"
-                             Background="#40FFFFFF"
-                             CornerRadius="8"
-                             Opacity="0"/>
-                        </Grid>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="hoverOverlay" Property="Opacity" Value="1"/>
-                                <Setter TargetName="border" Property="BorderBrush" Value="#FF0078D7"/>
-                                <Setter TargetName="border" Property="BorderThickness" Value="2"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="hoverOverlay" Property="Background" Value="#200078D7"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter TargetName="img" Property="Opacity" Value="0.5"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <!-- Estilo para botões de configuração de perfil -->
-        <Style x:Key="ProfileConfigButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Grid>
-                            <Border x:Name="ImageBorder"
-                                    Background="{TemplateBinding Background}"
-                                    CornerRadius="0"/>
-                            <Border x:Name="Overlay"
-                                    Background="Transparent"
-                                    CornerRadius="0"
-                                    Margin="-6"/>
-                            <Border x:Name="BorderVisual"
-                                    BorderBrush="{TemplateBinding BorderBrush}"
-                                    BorderThickness="{TemplateBinding BorderThickness}"
-                                    CornerRadius="0"
-                                    Background="Transparent"
-                                    Margin="-6"/>
-                            <ContentPresenter HorizontalAlignment="Center"
-                                              VerticalAlignment="Center"/>
-                        </Grid>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="Overlay" Property="Background" Value="{StaticResource ButtonHoverBrush}"/>
-                                <Setter TargetName="BorderVisual" Property="BorderBrush" Value="{StaticResource AccentBrush}"/>
-                                <Setter TargetName="BorderVisual" Property="BorderThickness" Value="2"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="Overlay" Property="Background" Value="{StaticResource ButtonPressedBrush}"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter TargetName="Overlay" Property="Background" Value="{StaticResource ButtonDisabledBrush}"/>
-                                <Setter Property="Foreground" Value="Gray"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <!-- Estilo para botões comuns com hover no padrão dos WindowControlButtonStyle -->
-        <Style x:Key="CommonFlatButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Padding" Value="8,4"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border x:Name="border"
+                            <Border
+                                x:Name="border"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="6">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                CornerRadius="8">
+                                <Image
+                                    x:Name="img"
+                                    Width="{TemplateBinding Width}"
+                                    Height="{TemplateBinding Height}"
+                                    Source="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}"
+                                    Stretch="UniformToFill" />
+                            </Border>
+                            <Border
+                                x:Name="hoverOverlay"
+                                Background="#40FFFFFF"
+                                CornerRadius="8"
+                                Opacity="0" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="hoverOverlay" Property="Opacity" Value="1" />
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF0078D7" />
+                                <Setter TargetName="border" Property="BorderThickness" Value="2" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="hoverOverlay" Property="Background" Value="#200078D7" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="img" Property="Opacity" Value="0.5" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--  Estilo para botões de configuração de perfil  -->
+        <Style
+            x:Key="ProfileConfigButtonStyle"
+            BasedOn="{StaticResource {x:Type Button}}"
+            TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border
+                                x:Name="ImageBorder"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="0" />
+                            <Border
+                                x:Name="Overlay"
+                                Margin="-6"
+                                Background="Transparent"
+                                CornerRadius="0" />
+                            <Border
+                                x:Name="BorderVisual"
+                                Margin="-6"
+                                Background="Transparent"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="0" />
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Overlay" Property="Background" Value="{StaticResource ButtonHoverBrush}" />
+                                <Setter TargetName="BorderVisual" Property="BorderBrush" Value="{StaticResource AccentBrush}" />
+                                <Setter TargetName="BorderVisual" Property="BorderThickness" Value="2" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Overlay" Property="Background" Value="{StaticResource ButtonPressedBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Overlay" Property="Background" Value="{StaticResource ButtonDisabledBrush}" />
+                                <Setter Property="Foreground" Value="Gray" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--  Estilo para botões comuns com hover no padrão dos WindowControlButtonStyle  -->
+        <Style x:Key="CommonFlatButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="8,4" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="6">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#26FFFFFF"/>
-                                <Setter TargetName="border" Property="BorderBrush" Value="#5779D2"/>
-                                <Setter TargetName="border" Property="BorderThickness" Value="1"/>
+                                <Setter TargetName="border" Property="Background" Value="#26FFFFFF" />
+                                <Setter TargetName="border" Property="BorderBrush" Value="#5779D2" />
+                                <Setter TargetName="border" Property="BorderThickness" Value="1" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#5779D2"/>
+                                <Setter TargetName="border" Property="Background" Value="#5779D2" />
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Opacity" Value="0.5"/>
+                                <Setter Property="Opacity" Value="0.5" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>

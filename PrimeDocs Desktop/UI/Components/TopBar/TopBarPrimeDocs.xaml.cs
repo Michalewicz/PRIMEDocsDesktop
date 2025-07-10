@@ -65,20 +65,20 @@ namespace PrimeDocs_Desktop.UI.Components
                 double mouseX = e.GetPosition(this).X;
                 double percentHorizontal = mouseX / ActualWidth;
 
+                // Restaura a janela e força o layout a ser atualizado imediatamente
                 window.WindowState = WindowState.Normal;
+                window.UpdateLayout();
 
-                window.Dispatcher.InvokeAsync(() =>
-                {
-                    double screenWidth = SystemParameters.WorkArea.Width;
-                    double screenLeft = SystemParameters.WorkArea.Left;
-                    double newLeft = screenLeft + (screenWidth - window.Width) * percentHorizontal;
+                // Calcula a nova posição da janela com base na posição do mouse
+                double screenWidth = SystemParameters.WorkArea.Width;
+                double screenLeft = SystemParameters.WorkArea.Left;
+                double newLeft = screenLeft + (screenWidth - window.Width) * percentHorizontal;
 
-                    window.Left = newLeft;
-                    window.Top = SystemParameters.WorkArea.Top + 10;
+                window.Left = newLeft;
+                window.Top = SystemParameters.WorkArea.Top; // Removido o +10 fixo
 
-                    AtualizarIconeMaximize();
-                    TentarDragMove();
-                }, System.Windows.Threading.DispatcherPriority.ApplicationIdle);
+                AtualizarIconeMaximize();
+                TentarDragMove();
             }
             else if (e.LeftButton != MouseButtonState.Pressed)
             {
@@ -91,7 +91,7 @@ namespace PrimeDocs_Desktop.UI.Components
             if (window.WindowState == WindowState.Maximized)
                 window.WindowState = WindowState.Normal;
             else
-                window.WindowState = WindowState.Maximized;
+               window.WindowState = WindowState.Maximized;
 
             AtualizarIconeMaximize();
         }

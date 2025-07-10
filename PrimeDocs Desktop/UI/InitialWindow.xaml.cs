@@ -27,7 +27,11 @@ namespace PrimeDocs_Desktop
         {
             InitializeComponent();
             newDocumentControl.CollapsedChanged += NewDocumentControl_CollapsedChanged;
+
+            // Tirar arredondamentos quando maximizado
+            this.StateChanged += WindowStateChanged;
         }
+
         private void CollapseChange()
         {
             if (newDocumentControl.documentCollapsed)
@@ -38,6 +42,23 @@ namespace PrimeDocs_Desktop
         private void NewDocumentControl_CollapsedChanged(object sender, EventArgs e)
         {
             CollapseChange();
+        }
+        private void WindowStateChanged(object sender, EventArgs e)
+        {
+            if (WindowState == WindowState.Maximized)
+            {
+                MainBorder.CornerRadius = new CornerRadius(0);
+                MainBorder.Padding = new Thickness(0, 5, 0, 0);
+                tbpInitialWindowTopBar.TopBarBorder.CornerRadius = new CornerRadius(0);
+                tbpInitialWindowTopBar.windowControlTopBar.btClose.Style = (Style)FindResource("WindowControlCloseMaximizedButtonStyle");
+            }
+            else if (WindowState == WindowState.Normal)
+            {
+                MainBorder.CornerRadius = new CornerRadius(13);
+                MainBorder.Padding = new Thickness(0);
+                tbpInitialWindowTopBar.TopBarBorder.CornerRadius = new CornerRadius(7);
+                tbpInitialWindowTopBar.windowControlTopBar.btClose.Style = (Style)FindResource("WindowControlCloseNormalButtonStyle");
+            }
         }
     }
 }

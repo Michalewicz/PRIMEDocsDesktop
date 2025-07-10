@@ -1,19 +1,56 @@
-﻿<UserControl x:Class="PrimeDocs_Desktop.UI.Components.TopBarPrimeDocs"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:PrimeDocs_Desktop.UI.Components"
-             mc:Ignorable="d"
-             d:DesignWidth="800"
-             d:DesignHeight="35"
-             >
-    <Border Background="#001BC9" CornerRadius="7" ClipToBounds="True">
-        <Grid Background="Transparent" Height="35" VerticalAlignment="Top" ClipToBounds="True">
-            <TextBlock Name="tbTopBarTitle" TextWrapping="Wrap" Text="Title" FontFamily="Open Sans" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="37,0,0,0" FontSize="20" Foreground="White"/>
-            <local:UserMenu d:BorderBrush="Red" d:BorderThickness="2" HorizontalAlignment="Right" Margin="286,0,155,0"/>
-            <local:WindowControl x:Name="windowControlTopBar" d:BorderBrush="Red" d:BorderThickness="2" Margin="630,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Right" Height="35" Width="155" MinWidth="155"/>
-            <Image Margin="10,5,0,5" Source="/Resources/Icons/InitialWindow/PrimeDocsBar.png" Stretch="Fill" Width="17" RenderTransformOrigin="-1.844,-8.906" HorizontalAlignment="Left" Height="25"/>
+﻿<UserControl
+    x:Class="PrimeDocs_Desktop.UI.Components.TopBarPrimeDocs"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:PrimeDocs_Desktop.UI.Components"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="35"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Border
+        x:Name="TopBarBorder"
+        Background="#001BC9"
+        ClipToBounds="True"
+        CornerRadius="7">
+        <Grid
+            Height="35"
+            VerticalAlignment="Top"
+            Background="Transparent"
+            ClipToBounds="True">
+            <TextBlock
+                Name="tbTopBarTitle"
+                Margin="37,0,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontFamily="Open Sans"
+                FontSize="20"
+                Foreground="White"
+                Text="Title"
+                TextWrapping="Wrap" />
+            <local:UserMenu
+                Margin="286,0,155,0"
+                HorizontalAlignment="Right"
+                d:BorderBrush="Red"
+                d:BorderThickness="2" />
+            <local:WindowControl
+                x:Name="windowControlTopBar"
+                Width="155"
+                Height="35"
+                MinWidth="155"
+                Margin="630,0,0,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                d:BorderBrush="Red"
+                d:BorderThickness="2" />
+            <Image
+                Width="17"
+                Height="25"
+                Margin="10,5,0,5"
+                HorizontalAlignment="Left"
+                RenderTransformOrigin="-1.844,-8.906"
+                Source="/Resources/Icons/InitialWindow/PrimeDocsBar.png"
+                Stretch="Fill" />
         </Grid>
     </Border>
 
