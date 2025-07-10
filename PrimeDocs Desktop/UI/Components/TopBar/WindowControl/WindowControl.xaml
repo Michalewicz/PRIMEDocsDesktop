@@ -55,8 +55,8 @@
             </Viewbox>
         </Button>
         <Button
-            Width="50"
             x:Name="btClose"
+            Width="50"
             HorizontalAlignment="Left"
             VerticalAlignment="Stretch"
             d:BorderBrush="Yellow"

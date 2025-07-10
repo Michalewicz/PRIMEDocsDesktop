@@ -27,7 +27,7 @@
                 Text="Criação de Documentos"
                 TextWrapping="Wrap" />
             <Rectangle
-                x:Name="rtInitialWindowLineDocument1"
+                x:Name="rtInitialWindowLineDocument"
                 Grid.ColumnSpan="2"
                 Height="2"
                 Margin="0,44,0,0"

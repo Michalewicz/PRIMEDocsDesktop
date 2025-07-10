@@ -149,7 +149,7 @@
             </Setter>
         </Style>
 
-        <!--  Style para o botão de fechar "maximizado" -->
+        <!--  Style para o botão de fechar "maximizado"  -->
         <Style
             x:Key="WindowControlCloseMaximizedButtonStyle"
             BasedOn="{StaticResource WindowControlButtonStyle}"

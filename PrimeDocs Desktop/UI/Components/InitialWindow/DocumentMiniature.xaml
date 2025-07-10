@@ -1,0 +1,94 @@
+﻿<UserControl
+    x:Class="PrimeDocs_Desktop.UI.Components.DocumentMiniature"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:PrimeDocs_Desktop.UI.Components"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="50"
+    d:DesignWidth="325"
+    mc:Ignorable="d">
+    <Grid>
+        <Border
+            Width="325"
+            d:Background="White"
+            CornerRadius="11">
+            <Button x:Name="btDocumentMiniature" Click="btDocumentMiniature_Click">
+                <Grid HorizontalAlignment="Left" d:Width="325">
+                    <Border
+                        Width="50"
+                        Height="50"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Background="#FF2341FF"
+                        BorderBrush="#FF1E1E1E"
+                        BorderThickness="2"
+                        CornerRadius="10">
+                        <TextBlock
+                            x:Name="tbDocumentMiniatureExtension"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="15"
+                            FontWeight="Bold"
+                            Foreground="White"
+                            Text=".EXT"
+                            TextWrapping="Wrap" />
+                    </Border>
+                    <TextBlock
+                        x:Name="tbDocumentMiniatureName"
+                        Margin="52,1,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        d:Width="300"
+                        FontSize="15"
+                        FontWeight="Bold"
+                        Foreground="Black"
+                        Text="DocumentoIncrivelmente Grande"
+                        TextWrapping="Wrap" />
+                    <Rectangle
+                        Width="1"
+                        Height="28"
+                        Margin="162,22,162,0"
+                        VerticalAlignment="Top"
+                        Stroke="#E5A0A0A0" />
+                    <TextBlock
+                        x:Name="tbDocumentMiniatureSave"
+                        Margin="52,35,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontSize="10"
+                        Foreground="#FF414141"
+                        Text="Local: AAAAAAAAAA..."
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        x:Name="tbDocumentMiniatureSize"
+                        Margin="52,21,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontSize="10"
+                        Foreground="#FF414141"
+                        Text="Tamanho: 90.850kB"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        x:Name="tbDocumentMiniatureDate"
+                        Margin="174,22,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontSize="10"
+                        Foreground="#FF414141"
+                        Text="Criado em: 50/50/2025"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        x:Name="tbDocumentMiniatureModification"
+                        Margin="174,36,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontSize="10"
+                        Foreground="#FF414141"
+                        Text="Modificado em: 20/20/2025"
+                        TextWrapping="Wrap" />
+                </Grid>
+            </Button>
+        </Border>
+    </Grid>
+</UserControl>
