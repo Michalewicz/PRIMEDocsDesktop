@@ -25,14 +25,14 @@
                 FontFamily="Open Sans"
                 FontSize="25"
                 Text="Criação de Documentos"
-                TextWrapping="Wrap" />
+                TextWrapping="Wrap" FontWeight="Bold" />
             <Rectangle
                 x:Name="rtInitialWindowLineDocument"
                 Grid.ColumnSpan="2"
                 Height="2"
                 Margin="0,44,0,0"
                 VerticalAlignment="Top"
-                Stroke="#E5CECECE" />
+                Stroke="#E5777777" />
             <Grid
                 x:Name="grInitialWindowDocumentCreationNew"
                 Grid.ColumnSpan="2"

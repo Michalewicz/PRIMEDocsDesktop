@@ -51,7 +51,7 @@
                         x:Name="openDocumentControl"
                         Padding="25,0,25,0"
                         d:BorderBrush="Gray"
-                        d:BorderThickness="2" />
+                        d:BorderThickness="2" Height="648" />
                 </StackPanel>
             </Border>
         </Grid>

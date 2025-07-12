@@ -5,92 +5,103 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:PrimeDocs_Desktop.UI.Components"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Height="327"
+    d:DesignHeight="800"
     d:DesignWidth="800"
     mc:Ignorable="d">
-    <Grid>
-        <Grid
-            x:Name="grInitialWindowOpenDocument"
-            Height="279"
-            VerticalAlignment="Top">
-            <TextBlock
-                x:Name="tbInitialWindowOpenDocument"
-                Width="780"
-                Height="35"
-                Margin="0,9,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                FontFamily="Open Sans"
-                FontSize="25"
-                Text="Abrir Documentos"
-                TextWrapping="Wrap" />
-            <Rectangle
-                x:Name="rtInitialWindowLineOpenDocument"
-                Height="2"
-                Margin="0,43,0,0"
-                VerticalAlignment="Top"
-                Stroke="#E5CECECE" />
-            <Button
-                x:Name="btInitialWindowOpenDocumentCollapse"
-                Width="35"
-                Height="34"
-                Margin="0,9,0,0"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-                d:BorderBrush="Gray"
-                d:BorderThickness="2"
-                Click="btInitialWindowOpenDocumentCollapse_Click">
-                <Image
-                    Width="35"
-                    Height="35"
-                    Source="/Resources/Icons/InitialWindow/collapse.png" />
-            </Button>
+    <Border d:BorderBrush="YellowGreen" d:BorderThickness="2">
+        <Grid>
             <Grid
-                x:Name="grInitialWindowOpenDocumentNew"
-                Height="230"
-                Margin="10,50,10,0"
+                x:Name="grInitialWindowOpenDocument"
+                Height="279"
                 VerticalAlignment="Top">
-                <TextBox Margin="10,5,150,205" TextWrapping="Wrap" />
-                <Button
-                    Width="135"
-                    Height="20"
-                    Margin="0,5,10,0"
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Top"
-                    Content="Abrir..." />
                 <TextBlock
-                    x:Name="tbInitialWindowOpenDocumentFilter"
-                    Width="687"
-                    Height="17"
-                    Margin="10,44,0,0"
+                    x:Name="tbInitialWindowOpenDocument"
+                    Width="780"
+                    Height="35"
+                    Margin="0,9,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     FontFamily="Open Sans"
-                    FontSize="12.5"
-                    Text="Filtros de pesquisa"
-                    TextWrapping="Wrap" />
+                    FontSize="25"
+                    Text="Abrir Documentos"
+                    TextWrapping="Wrap" FontWeight="Bold" />
                 <Rectangle
-                    x:Name="rtInitialWindowLineOpenDocumentFilter"
+                    x:Name="rtInitialWindowLineOpenDocument"
                     Height="2"
-                    Margin="10,60,10,0"
+                    Margin="0,43,0,0"
                     VerticalAlignment="Top"
-                    Stroke="#E5CECECE" />
+                    Stroke="#E5777777" />
                 <Button
-                    x:Name="btInitialWindowOpenDocumentCollapseFilter"
+                    x:Name="btInitialWindowOpenDocumentCollapse"
                     Width="35"
-                    Height="35"
-                    Margin="0,26,10,0"
+                    Height="34"
+                    Margin="0,9,0,0"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top"
                     d:BorderBrush="Gray"
                     d:BorderThickness="2"
-                    Click="btInitialWindowOpenDocumentCollapseFilter_Click">
+                    Click="btInitialWindowOpenDocumentCollapse_Click">
                     <Image
                         Width="35"
                         Height="35"
                         Source="/Resources/Icons/InitialWindow/collapse.png" />
                 </Button>
+                <Grid x:Name="grInitialWindowOpenDocumentNew" Margin="10,50,10,-506">
+
+                    <TextBox
+                        Height="18"
+                        Margin="10,5,150,0"
+                        VerticalAlignment="Top"
+                        TextWrapping="Wrap" />
+                    <Button
+                        Width="135"
+                        Height="20"
+                        Margin="0,5,10,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Content="Abrir..." />
+                    <TextBlock
+                        x:Name="tbInitialWindowOpenDocumentFilter"
+                        Width="687"
+                        Height="17"
+                        Margin="10,44,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Open Sans"
+                        FontSize="17"
+                        Text="Filtros de pesquisa"
+                        TextWrapping="Wrap" FontWeight="Bold" />
+                    <Rectangle
+                        x:Name="rtInitialWindowLineOpenDocumentFilter"
+                        Height="2"
+                        Margin="10,70,10,0"
+                        VerticalAlignment="Top"
+                        Stroke="#E5777777" />
+                    <Button
+                        x:Name="btInitialWindowOpenDocumentCollapseFilter"
+                        Width="35"
+                        Height="35"
+                        Margin="0,35,10,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        d:BorderBrush="Gray"
+                        d:BorderThickness="2"
+                        Click="btInitialWindowOpenDocumentCollapseFilter_Click">
+                        <Image
+                            Width="35"
+                            Height="35"
+                            Source="/Resources/Icons/InitialWindow/collapse.png" />
+                    </Button>
+                    <Grid x:Name="grInitialWindowOpenDocumentFilter"
+                          Visibility="Collapsed">
+                        <local:SearchFilter
+                            Height="450"
+                            Margin="0,67,0,0"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Top" />
+                    </Grid>
+                </Grid>
             </Grid>
         </Grid>
-    </Grid>
+    </Border>
 </UserControl>

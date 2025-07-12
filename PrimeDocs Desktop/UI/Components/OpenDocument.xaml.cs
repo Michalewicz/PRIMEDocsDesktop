@@ -45,6 +45,7 @@ namespace PrimeDocs_Desktop.UI.Components
             button.RenderTransform = rotation;
             button.RenderTransformOrigin = new Point(0.5, 0.5);
         }
+        
         private void btInitialWindowOpenDocumentCollapse_Click(object sender, RoutedEventArgs e)
         {
             rotateCollapseButton(btInitialWindowOpenDocumentCollapse);
@@ -60,6 +61,14 @@ namespace PrimeDocs_Desktop.UI.Components
         private void btInitialWindowOpenDocumentCollapseFilter_Click(object sender, RoutedEventArgs e)
         {
             rotateCollapseButton(btInitialWindowOpenDocumentCollapseFilter);
+            if (grInitialWindowOpenDocumentFilter.Visibility == Visibility.Visible)
+            {
+                grInitialWindowOpenDocumentFilter.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                grInitialWindowOpenDocumentFilter.Visibility = Visibility.Visible;
+            }
         }
     }
 }

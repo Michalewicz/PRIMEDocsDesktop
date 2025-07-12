@@ -39,11 +39,11 @@ namespace PrimeDocs_Desktop
             else
                 openDocumentControl.Margin = new Thickness(0, 0, 0, 0);
         }
-        private void NewDocumentControl_CollapsedChanged(object sender, EventArgs e)
+        private void NewDocumentControl_CollapsedChanged(object? sender, EventArgs e)
         {
             CollapseChange();
         }
-        private void WindowStateChanged(object sender, EventArgs e)
+        private void WindowStateChanged(object? sender, EventArgs e)
         {
             if (WindowState == WindowState.Maximized)
             {
