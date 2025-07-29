@@ -48,27 +48,36 @@
                 </Button>
                 <Grid x:Name="grInitialWindowOpenDocumentNew" Margin="10,50,10,-506">
 
-                    <TextBox
-                        Height="18"
+                    <local:Placeholder
+                        Height="20"
                         Margin="10,5,150,0"
                         VerticalAlignment="Top"
-                        TextWrapping="Wrap" />
+                        FontFamily="Open Sans"
+                        FontSize="13"
+                        BorderThickness="0.75"
+                        BorderBrush="Black"
+                        PlaceholderText='Digite o nome do documento'
+                    />
                     <Button
                         Width="135"
                         Height="20"
                         Margin="0,5,10,0"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Top"
-                        Content="Abrir..." />
+                        Content="Abrir..." 
+                        BorderThickness="0.5"
+                        BorderBrush="Black"
+                        Background="#FFE6E6E6"/>
+                    
                     <TextBlock
                         x:Name="tbInitialWindowOpenDocumentFilter"
                         Width="687"
-                        Height="17"
+                        Height="22"
                         Margin="10,44,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         FontFamily="Open Sans"
-                        FontSize="17"
+                        FontSize="19"
                         Text="Filtros de pesquisa"
                         TextWrapping="Wrap" FontWeight="Bold" />
                     <Rectangle

@@ -12,14 +12,15 @@
         <TextBlock
             Width="99"
             Height="18"
-            Margin="35,3,0,0"
+            Margin="36,3,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            FontFamily="Comic Sans"
+            FontFamily="Open Sans"
+            FontSize="13"
             Text="Criado em :"
             TextWrapping="Wrap" />
         <DatePicker
-            Margin="162,0,0,0"
+            Margin="123,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top" />
     </Grid>

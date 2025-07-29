@@ -24,8 +24,9 @@
                 HorizontalAlignment="Left"
                 FontFamily="Open Sans"
                 FontSize="25"
+                FontWeight="Bold"
                 Text="Criação de Documentos"
-                TextWrapping="Wrap" FontWeight="Bold" />
+                TextWrapping="Wrap" />
             <Rectangle
                 x:Name="rtInitialWindowLineDocument"
                 Grid.ColumnSpan="2"

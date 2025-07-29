@@ -23,6 +23,7 @@ namespace PrimeDocs_Desktop.UI.Components
         public SearchFilter()
         {
             InitializeComponent();
+            cbSearchMode.SelectedIndex = 0;
         }
 
         private void cbSearchMode_SelectionChanged(object sender, SelectionChangedEventArgs e)

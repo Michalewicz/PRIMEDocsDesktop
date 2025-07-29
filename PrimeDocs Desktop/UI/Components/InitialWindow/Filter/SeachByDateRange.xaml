@@ -10,26 +10,20 @@
     mc:Ignorable="d">
     <Grid d:Background="Aqua">
         <TextBlock
-            Width="99"
+            Width="298"
             Height="18"
-            Margin="36,5,0,0"
+            Margin="36,3,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            FontFamily="Comic Sans"
-            Text="Criado entre :"
-            TextWrapping="Wrap" />
+            FontFamily="Open Sans"
+            FontSize="13"
+            TextWrapping="Wrap"><Run Text="Criado entre :" /><Run Text="                                              " /><Run Text=" e" /></TextBlock>
         <DatePicker
-            Margin="152,0,0,0"
+            Margin="123,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top" />
-        <TextBlock
-            Margin="318,5,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text="e"
-            TextWrapping="Wrap" RenderTransformOrigin="1.593,0.764" />
         <DatePicker
-            Margin="358,0,0,0"
+            Margin="307,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top" />
     </Grid>

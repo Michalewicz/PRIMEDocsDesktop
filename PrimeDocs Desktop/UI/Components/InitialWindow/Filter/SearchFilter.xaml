@@ -14,7 +14,7 @@
                 <TextBlock
                     Width="687"
                     Height="22"
-                    Margin="10,10,0,0"
+                    Margin="10,19,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     FontFamily="Open Sans"
@@ -27,14 +27,14 @@
                     VerticalAlignment="Top"
                     Stroke="#E5777777" />
                 <CheckBox
-                    Margin="10,52,0,0"
+                    Margin="19,62,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Content="Local"
                     FontFamily="Open Sans"
                     FontSize="13" />
                 <CheckBox
-                    Margin="114,52,0,0"
+                    Margin="148,62,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Content="Nuvem"
@@ -44,7 +44,7 @@
                 <TextBlock
                     Width="687"
                     Height="22"
-                    Margin="10,91,0,0"
+                    Margin="10,100,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     FontFamily="Open Sans"
@@ -57,28 +57,28 @@
                     VerticalAlignment="Top"
                     Stroke="#E5777777" />
                 <CheckBox
-                    Margin="19,136,0,0"
+                    Margin="19,142,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Content=".doc"
                     FontFamily="Open Sans"
                     FontSize="13" />
                 <CheckBox
-                    Margin="148,136,0,0"
+                    Margin="148,142,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Content=".docx"
                     FontFamily="Open Sans"
                     FontSize="13" />
                 <CheckBox
-                    Margin="299,136,0,0"
+                    Margin="299,142,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Content=".txt"
                     FontFamily="Open Sans"
                     FontSize="13" />
                 <CheckBox
-                    Margin="456,136,0,0"
+                    Margin="456,142,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Content=".md"
@@ -88,11 +88,11 @@
                 <TextBlock
                     Width="687"
                     Height="22"
-                    Margin="10,171,0,0"
+                    Margin="10,179,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     FontFamily="Open Sans"
-                    FontSize="13"
+                    FontSize="15"
                     Text="Data de Criação"
                     TextWrapping="Wrap" />
                 <Rectangle
@@ -102,11 +102,9 @@
                     Stroke="#E5777777" />
                 <ComboBox
                     x:Name="cbSearchMode"
-                    Width="328"
-                    Margin="19,0,0,0"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    SelectionChanged="cbSearchMode_SelectionChanged">
+                    Margin="19,211,0,0"
+                    VerticalAlignment="Top"
+                    SelectionChanged="cbSearchMode_SelectionChanged" HorizontalAlignment="Left" Width="328">
                     <ComboBoxItem Content="Data exata" />
                     <ComboBoxItem Content="Intervalo de Datas" />
                 </ComboBox>
@@ -128,7 +126,7 @@
                 <TextBlock
                     Width="687"
                     Height="22"
-                    Margin="10,302,0,0"
+                    Margin="10,311,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     FontFamily="Open Sans"
@@ -147,14 +145,13 @@
                     VerticalAlignment="Top"
                     FontFamily="Open Sans"
                     FontSize="13"
-                    Text="Contem/Começa/Termina com :"
-                    TextWrapping="Wrap" />
-                <TextBox
+                    TextWrapping="Wrap" ><Run Text="Cont"/><Run Language="pt-br" Text="êm"/><Run Text="/Começa/Termina com :"/></TextBlock>
+                <local:Placeholder
                     Width="304"
                     Margin="221,347,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    TextWrapping="Wrap" />
+                    PlaceholderText="Ex: a*/*a*/*a" />
             </Grid>
         </ScrollViewer>
     </Border>

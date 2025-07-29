@@ -49,9 +49,10 @@
                         d:BorderThickness="2" />
                     <components:OpenDocument
                         x:Name="openDocumentControl"
+                        Height="648"
                         Padding="25,0,25,0"
                         d:BorderBrush="Gray"
-                        d:BorderThickness="2" Height="648" />
+                        d:BorderThickness="2" />
                 </StackPanel>
             </Border>
         </Grid>

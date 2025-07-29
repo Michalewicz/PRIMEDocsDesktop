@@ -13,23 +13,38 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PrimeDocs_Desktop
+namespace PrimeDocs_Desktop.UI.Components
 {
     /// <summary>
     /// Interação lógica para TextBoxPrimeDocs.xam
     /// </summary>
-    public partial class TextBoxPrimeDocs : UserControl
+    public partial class Placeholder : UserControl
     {
-        public TextBoxPrimeDocs()
+        public Placeholder()
         {
             InitializeComponent();
         }
 
-        public string Text
+        public static readonly DependencyProperty PlaceholderTextProperty =
+                   DependencyProperty.Register("PlaceholderText", typeof(string), typeof(Placeholder), new PropertyMetadata("Placeholder"));
+
+        public string PlaceholderText
         {
-            get { return (string)GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
+            get => (string)GetValue(PlaceholderTextProperty);
+            set => SetValue(PlaceholderTextProperty, value);
         }
-        public static readonly DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(string), typeof(TextBoxPrimeDocs), new PropertyMetadata(string.Empty));
+    
+
+        private void tbxPlaceholder_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tbxPlaceholder.Text))
+            {
+                tbPlaceholder.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                tbPlaceholder.Visibility = Visibility.Collapsed;
+            }
+        }
     }
 }
