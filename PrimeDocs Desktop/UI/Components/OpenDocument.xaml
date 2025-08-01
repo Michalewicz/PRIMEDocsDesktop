@@ -9,7 +9,9 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
     <Border d:BorderBrush="YellowGreen" d:BorderThickness="2">
+
         <Grid>
+
             <Grid
                 x:Name="grInitialWindowOpenDocument"
                 Height="279"
@@ -23,8 +25,9 @@
                     VerticalAlignment="Top"
                     FontFamily="Open Sans"
                     FontSize="25"
+                    FontWeight="Bold"
                     Text="Abrir Documentos"
-                    TextWrapping="Wrap" FontWeight="Bold" />
+                    TextWrapping="Wrap" />
                 <Rectangle
                     x:Name="rtInitialWindowLineOpenDocument"
                     Height="2"
@@ -46,29 +49,29 @@
                         Height="35"
                         Source="/Resources/Icons/InitialWindow/collapse.png" />
                 </Button>
+
                 <Grid x:Name="grInitialWindowOpenDocumentNew" Margin="10,50,10,-506">
 
                     <local:Placeholder
                         Height="20"
                         Margin="10,5,150,0"
                         VerticalAlignment="Top"
+                        BorderBrush="Black"
+                        BorderThickness="0.75"
                         FontFamily="Open Sans"
                         FontSize="13"
-                        BorderThickness="0.75"
-                        BorderBrush="Black"
-                        PlaceholderText='Digite o nome do documento'
-                    />
+                        PlaceholderText="Digite o nome do documento" />
                     <Button
                         Width="135"
                         Height="20"
                         Margin="0,5,10,0"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Top"
-                        Content="Abrir..." 
-                        BorderThickness="0.5"
+                        Background="#FFE6E6E6"
                         BorderBrush="Black"
-                        Background="#FFE6E6E6"/>
-                    
+                        BorderThickness="0.5"
+                        Content="Abrir..." />
+
                     <TextBlock
                         x:Name="tbInitialWindowOpenDocumentFilter"
                         Width="687"
@@ -78,8 +81,9 @@
                         VerticalAlignment="Top"
                         FontFamily="Open Sans"
                         FontSize="19"
+                        FontWeight="Bold"
                         Text="Filtros de pesquisa"
-                        TextWrapping="Wrap" FontWeight="Bold" />
+                        TextWrapping="Wrap" />
                     <Rectangle
                         x:Name="rtInitialWindowLineOpenDocumentFilter"
                         Height="2"
@@ -101,16 +105,17 @@
                             Height="35"
                             Source="/Resources/Icons/InitialWindow/collapse.png" />
                     </Button>
-                    <Grid x:Name="grInitialWindowOpenDocumentFilter"
-                          Visibility="Collapsed">
+                    <Grid x:Name="grInitialWindowOpenDocumentFilter" Visibility="Collapsed">
                         <local:SearchFilter
-                            Height="450"
-                            Margin="0,67,0,0"
-                            HorizontalAlignment="Stretch"
+                            Height="300"
+                            Margin="0,75,0,0"
                             VerticalAlignment="Top" />
                     </Grid>
                 </Grid>
+
             </Grid>
+
         </Grid>
+
     </Border>
 </UserControl>

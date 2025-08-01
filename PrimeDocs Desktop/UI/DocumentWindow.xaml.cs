@@ -19,9 +19,28 @@ namespace PrimeDocs_Desktop.UI
     /// </summary>
     public partial class DocumentWindow : Window
     {
-        public DocumentWindow()
+        public DocumentWindow(String typeExtension)
         {
             InitializeComponent();
+
+            this.StateChanged += WindowStateChanged;
+        }
+        private void WindowStateChanged(object? sender, EventArgs e)
+        {
+            if (WindowState == WindowState.Maximized)
+            {
+                MainBorder.CornerRadius = new CornerRadius(0);
+                MainBorder.Padding = new Thickness(0, 5, 0, 0);
+                tbpInitialWindowTopBar.TopBarBorder.CornerRadius = new CornerRadius(0);
+                tbpInitialWindowTopBar.windowControlTopBar.btClose.Style = (Style)FindResource("WindowControlCloseMaximizedButtonStyle");
+            }
+            else if (WindowState == WindowState.Normal)
+            {
+                MainBorder.CornerRadius = new CornerRadius(13);
+                MainBorder.Padding = new Thickness(0);
+                tbpInitialWindowTopBar.TopBarBorder.CornerRadius = new CornerRadius(7);
+                tbpInitialWindowTopBar.windowControlTopBar.btClose.Style = (Style)FindResource("WindowControlCloseNormalButtonStyle");
+            }
         }
     }
 }

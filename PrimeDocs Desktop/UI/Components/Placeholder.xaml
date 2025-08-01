@@ -5,20 +5,21 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:PrimeDocs_Desktop.UI.Components"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
->
-<Grid>
+    mc:Ignorable="d">
+    <Grid>
         <TextBox
             x:Name="tbxPlaceholder"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
-            TextWrapping="Wrap" TextChanged="tbxPlaceholder_TextChanged" />
+            TextChanged="tbxPlaceholder_TextChanged"
+            TextWrapping="Wrap" />
         <TextBlock
             x:Name="tbPlaceholder"
+            Margin="5,0,0,0"
             VerticalAlignment="Center"
-            Foreground="#FF969696"
+            Foreground="DimGray"
+            IsHitTestVisible="False"
             Text="{Binding PlaceholderText, RelativeSource={RelativeSource AncestorType=UserControl}}"
-            TextWrapping="Wrap" 
-            IsHitTestVisible="False"/>
+            TextWrapping="Wrap" />
     </Grid>
 </UserControl>

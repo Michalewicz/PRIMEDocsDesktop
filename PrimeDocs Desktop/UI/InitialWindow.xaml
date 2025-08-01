@@ -15,6 +15,7 @@
     Icon="/Resources/Icons/PrimeDocs.png"
     WindowStyle="None"
     mc:Ignorable="d">
+
     <WindowChrome.WindowChrome>
         <WindowChrome
             CaptionHeight="0"
@@ -22,6 +23,7 @@
             ResizeBorderThickness="7"
             UseAeroCaptionButtons="False" />
     </WindowChrome.WindowChrome>
+
     <Border
         x:Name="MainBorder"
         Background="White"
@@ -29,31 +31,50 @@
         BorderThickness="2"
         ClipToBounds="True"
         CornerRadius="13">
+
         <Grid>
             <Border
                 x:Name="SecondaryBorder"
-                Margin="0"
                 Background="White"
                 CornerRadius="15">
-                <StackPanel Background="Transparent">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
                     <components:TopBarPrimeDocs
                         x:Name="tbpInitialWindowTopBar"
+                        Grid.Row="0"
                         Height="35"
-                        Margin="0,0,0,0"
                         HorizontalAlignment="Stretch"
                         VerticalAlignment="Top" />
-                    <components:NewDocument
-                        x:Name="newDocumentControl"
-                        Padding="25,0,25,0"
-                        d:BorderBrush="Gray"
-                        d:BorderThickness="2" />
-                    <components:OpenDocument
-                        x:Name="openDocumentControl"
-                        Height="648"
-                        Padding="25,0,25,0"
-                        d:BorderBrush="Gray"
-                        d:BorderThickness="2" />
-                </StackPanel>
+
+
+                    <ScrollViewer
+                        x:Name="scrollViewer"
+                        Grid.Row="1"
+                        Padding="0"
+                        HorizontalScrollBarVisibility="Disabled"
+                        VerticalScrollBarVisibility="Auto">
+
+                        <StackPanel>
+                            <components:NewDocument
+                                x:Name="newDocumentControl"
+                                Padding="25,0,25,0"
+                                d:BorderBrush="Gray"
+                                d:BorderThickness="2" />
+
+                            <components:OpenDocument
+                                x:Name="openDocumentControl"
+                                Height="475"
+                                Padding="25,0,25,0"
+                                d:BorderBrush="Gray"
+                                d:BorderThickness="2" />
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
             </Border>
         </Grid>
     </Border>

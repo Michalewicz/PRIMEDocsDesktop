@@ -30,17 +30,39 @@ namespace PrimeDocs_Desktop.UI.Components
     
         private void btInitialWindowDocumentText_Click(object sender, RoutedEventArgs e)
         {
-
+            DocumentWindow documentWindow = new DocumentWindow("txt");
+            documentWindow.Show();
+            
+            Window initialWindow = Window.GetWindow(this);
+            if(initialWindow != null)
+            {
+                initialWindow.Close(); 
+            }
+            
         }
 
         private void btInitialWindowDocumentA4_Click(object sender, RoutedEventArgs e)
         {
+            DocumentWindow documentWindow = new DocumentWindow("doc");
+            documentWindow.Show();
 
+            Window initialWindow = Window.GetWindow(this);
+            if (initialWindow != null)
+            {
+                initialWindow.Close();
+            }
         }
 
         private void btInitialWindowDocumentMD_Click(object sender, RoutedEventArgs e)
         {
+            DocumentWindow documentWindow = new DocumentWindow("md");
+            documentWindow.Show();
 
+            Window initialWindow = Window.GetWindow(this);
+            if (initialWindow != null)
+            {
+                initialWindow.Close();
+            }
         }
         private void rotateCollapseButton(Button button)
         {

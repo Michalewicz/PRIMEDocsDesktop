@@ -2,12 +2,57 @@
     x:Class="PrimeDocs_Desktop.UI.DocumentWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:components="clr-namespace:PrimeDocs_Desktop.UI.Components"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:PrimeDocs_Desktop.UI"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="DocumentWindow"
     Width="800"
     Height="450"
+    AllowsTransparency="True"
+    Background="Transparent"
+    WindowStyle="None"
+    Icon="/Resources/Icons/PrimeDocs.png"
     mc:Ignorable="d">
-    <Grid />
+    <WindowChrome.WindowChrome>
+        <WindowChrome
+            CaptionHeight="0"
+            GlassFrameThickness="0"
+            ResizeBorderThickness="7"
+            UseAeroCaptionButtons="False" />
+    </WindowChrome.WindowChrome>
+    <Border
+        x:Name="MainBorder"
+        Background="White"
+        BorderBrush="#001BC9"
+        BorderThickness="2"
+        ClipToBounds="True"
+        CornerRadius="13">
+        <Grid>
+            <Border
+                x:Name="SecondaryBorder"
+                Background="White"
+                CornerRadius="15">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <components:TopBarPrimeDocs
+                        x:Name="tbpInitialWindowTopBar"
+                        Grid.Row="0"
+                        Height="35"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Top" />
+                    <ScrollViewer
+                        x:Name="scrollViewer"
+                        Grid.Row="1"
+                        Padding="0"
+                        HorizontalScrollBarVisibility="Disabled"
+                        VerticalScrollBarVisibility="Auto" />
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
 </Window>
