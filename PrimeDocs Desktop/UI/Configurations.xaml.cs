@@ -24,6 +24,10 @@ namespace PrimeDocs_Desktop.UI
             InitializeComponent();
 
             this.StateChanged += WindowStateChanged;
+            tbpInitialWindowTopBar.userMenuTopBar.Visibility = Visibility.Hidden;
+            tbpInitialWindowTopBar.windowControlTopBar.btMaximize.Visibility = Visibility.Hidden;
+            tbpInitialWindowTopBar.windowControlTopBar.btMinimize.Visibility = Visibility.Hidden;
+            tbpInitialWindowTopBar.tbTopBarTitle.Text = "Configurações";
         }
         private void WindowStateChanged(object? sender, EventArgs e)
         {

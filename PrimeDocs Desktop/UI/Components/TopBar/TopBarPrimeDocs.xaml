@@ -8,50 +8,53 @@
     d:DesignHeight="35"
     d:DesignWidth="800"
     mc:Ignorable="d">
+
     <Border
         x:Name="TopBarBorder"
         Background="#001BC9"
         ClipToBounds="True"
         CornerRadius="7">
-        <Grid
-            Height="35"
-            VerticalAlignment="Top"
-            Background="Transparent"
-            ClipToBounds="True">
+
+        <DockPanel Height="35" LastChildFill="True" Background="Transparent">
+
+            <!-- Ícone -->
+            <local:Home
+                HorizontalAlignment="Left"
+                d:BorderBrush="Red"
+                d:BorderThickness="2"
+                DockPanel.Dock="Left" />
+
+            <!-- Título -->
             <TextBlock
                 Name="tbTopBarTitle"
-                Margin="37,0,0,0"
-                HorizontalAlignment="Left"
                 VerticalAlignment="Center"
                 FontFamily="Open Sans"
                 FontSize="20"
                 Foreground="White"
                 Text="Title"
-                TextWrapping="Wrap" />
-            <local:UserMenu
-                Margin="286,0,155,0"
-                HorizontalAlignment="Right"
-                d:BorderBrush="Red"
-                d:BorderThickness="2" />
+                TextWrapping="Wrap"
+                DockPanel.Dock="Left" Width="420" />
+
+            <!-- Botões da Janela (Direita) -->
             <local:WindowControl
                 x:Name="windowControlTopBar"
                 Width="155"
                 Height="35"
                 MinWidth="155"
-                Margin="630,0,0,0"
-                HorizontalAlignment="Right"
                 VerticalAlignment="Top"
+                DockPanel.Dock="Right"
                 d:BorderBrush="Red"
                 d:BorderThickness="2" />
-            <Image
-                Width="17"
-                Height="25"
-                Margin="10,5,0,5"
-                HorizontalAlignment="Left"
-                RenderTransformOrigin="-1.844,-8.906"
-                Source="/Resources/Icons/InitialWindow/PrimeDocsBar.png"
-                Stretch="Fill" />
-        </Grid>
-    </Border>
 
+            <!-- Menu do Usuário (Direita, antes dos botões) -->
+            <local:UserMenu
+                x:Name="userMenuTopBar"
+                VerticalAlignment="Center"
+                Margin="0,0,5,0"
+                DockPanel.Dock="Right"
+                d:BorderBrush="Red"
+                d:BorderThickness="2" />
+
+        </DockPanel>
+    </Border>
 </UserControl>

@@ -33,7 +33,7 @@ namespace PrimeDocs_Desktop.UI.Components
         private void btInitialWindowMaximize_Click(object sender, RoutedEventArgs e)
         {
             var window = GetParentWindow();
-            if (window != null)
+            if (window != null && !(window is Configurations))
             {
                 if (window.WindowState == WindowState.Maximized)
                     window.WindowState = WindowState.Normal;

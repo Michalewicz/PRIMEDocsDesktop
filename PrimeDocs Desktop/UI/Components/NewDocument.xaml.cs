@@ -30,39 +30,66 @@ namespace PrimeDocs_Desktop.UI.Components
     
         private void btInitialWindowDocumentText_Click(object sender, RoutedEventArgs e)
         {
-            DocumentWindow documentWindow = new DocumentWindow("txt");
+            Window actualWindow = Window.GetWindow(this);
+            var actual = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
+
+                var documentWindow = new DocumentWindow("txt")
+                {
+                    WindowStartupLocation = WindowStartupLocation.Manual
+                };
+
+                if (actual != null)
+                {
+                documentWindow.Left = actual.Left;
+                documentWindow.Top = actual.Top;
+                documentWindow.Width = actual.Width;
+                documentWindow.Height = actual.Height;
+                }
             documentWindow.Show();
-            
-            Window initialWindow = Window.GetWindow(this);
-            if(initialWindow != null)
-            {
-                initialWindow.Close(); 
-            }
-            
+            actualWindow.Close();
         }
 
         private void btInitialWindowDocumentA4_Click(object sender, RoutedEventArgs e)
         {
-            DocumentWindow documentWindow = new DocumentWindow("doc");
-            documentWindow.Show();
+            Window actualWindow = Window.GetWindow(this);
+            var actual = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
 
-            Window initialWindow = Window.GetWindow(this);
-            if (initialWindow != null)
+            var documentWindow = new DocumentWindow("docx")
             {
-                initialWindow.Close();
+                WindowStartupLocation = WindowStartupLocation.Manual
+            };
+
+            if (actual != null)
+            {
+                documentWindow.Left = actual.Left;
+                documentWindow.Top = actual.Top;
+                documentWindow.Width = actual.Width;
+                documentWindow.Height = actual.Height;
             }
+            documentWindow.Show();
+            actualWindow.Close();
+
         }
 
         private void btInitialWindowDocumentMD_Click(object sender, RoutedEventArgs e)
         {
-            DocumentWindow documentWindow = new DocumentWindow("md");
-            documentWindow.Show();
+            Window actualWindow = Window.GetWindow(this);
+            var actual = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
 
-            Window initialWindow = Window.GetWindow(this);
-            if (initialWindow != null)
+            var documentWindow = new DocumentWindow("md")
             {
-                initialWindow.Close();
+                WindowStartupLocation = WindowStartupLocation.Manual
+            };
+
+            if (actual != null)
+            {
+                documentWindow.Left = actual.Left;
+                documentWindow.Top = actual.Top;
+                documentWindow.Width = actual.Width;
+                documentWindow.Height = actual.Height;
             }
+            documentWindow.Show();
+            actualWindow.Close();
         }
         private void rotateCollapseButton(Button button)
         {

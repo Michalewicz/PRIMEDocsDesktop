@@ -24,6 +24,8 @@ namespace PrimeDocs_Desktop.UI
             InitializeComponent();
 
             this.StateChanged += WindowStateChanged;
+            tbpInitialWindowTopBar.tbTopBarTitle.Text = "Documento - PrimeDocs";
+
         }
         private void WindowStateChanged(object? sender, EventArgs e)
         {

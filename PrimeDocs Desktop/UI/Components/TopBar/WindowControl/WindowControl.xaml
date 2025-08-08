@@ -8,6 +8,7 @@
     mc:Ignorable="d">
     <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
         <Button
+            x:Name="btMinimize"
             Width="50"
             HorizontalAlignment="Left"
             VerticalAlignment="Stretch"

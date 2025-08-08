@@ -27,7 +27,7 @@ namespace PrimeDocs_Desktop
         {
             InitializeComponent();
             newDocumentControl.CollapsedChanged += NewDocumentControl_CollapsedChanged;
-
+            tbpInitialWindowTopBar.tbTopBarTitle.Text = "Início";
             // Tirar arredondamentos quando maximizado
             this.StateChanged += WindowStateChanged;
         }

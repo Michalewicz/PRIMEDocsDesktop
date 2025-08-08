@@ -39,7 +39,7 @@ namespace PrimeDocs_Desktop.UI.Components
 
             if (e.ChangedButton == MouseButton.Left)
             {
-                if (e.ClickCount == 2)
+                if (e.ClickCount == 2 && !(window is Configurations))
                 {
                     AlternarEstadoJanela();
                 }

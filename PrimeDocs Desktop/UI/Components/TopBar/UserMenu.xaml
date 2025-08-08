@@ -8,17 +8,23 @@
     d:Height="50"
     d:Width="350"
     mc:Ignorable="d">
-    <Grid Height="35" HorizontalAlignment="Center">
+
+    <StackPanel
+        Orientation="Horizontal"
+        HorizontalAlignment="Right"
+        VerticalAlignment="Center"
+        Height="35">
+        <!-- Ícone de Perfil -->
         <local:Profile
-            Margin="0,0,65,0"
-            HorizontalAlignment="Right"
             VerticalAlignment="Center"
             d:BorderBrush="Yellow"
             d:BorderThickness="2" />
+        <!-- Ícone de Configuração -->
         <local:Config
-            Margin="290,0,20,0"
             VerticalAlignment="Center"
+            Margin="10,0,0,0"
             d:BorderBrush="Yellow"
             d:BorderThickness="2" />
-    </Grid>
+    </StackPanel>
+
 </UserControl>
