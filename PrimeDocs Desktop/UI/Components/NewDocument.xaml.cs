@@ -38,13 +38,17 @@ namespace PrimeDocs_Desktop.UI.Components
                     WindowStartupLocation = WindowStartupLocation.Manual
                 };
 
-                if (actual != null)
-                {
+            if (actual != null && !(actualWindow.WindowState == WindowState.Maximized))
+            {
                 documentWindow.Left = actual.Left;
                 documentWindow.Top = actual.Top;
                 documentWindow.Width = actual.Width;
                 documentWindow.Height = actual.Height;
-                }
+            }
+            else
+            {
+                documentWindow.WindowState = WindowState.Maximized;
+            }
             documentWindow.Show();
             actualWindow.Close();
         }
@@ -59,14 +63,17 @@ namespace PrimeDocs_Desktop.UI.Components
                 WindowStartupLocation = WindowStartupLocation.Manual
             };
 
-            if (actual != null)
+            if (actual != null && !(actualWindow.WindowState == WindowState.Maximized))
             {
                 documentWindow.Left = actual.Left;
                 documentWindow.Top = actual.Top;
                 documentWindow.Width = actual.Width;
                 documentWindow.Height = actual.Height;
+            } else
+            {
+                documentWindow.WindowState = WindowState.Maximized;
             }
-            documentWindow.Show();
+                documentWindow.Show();
             actualWindow.Close();
 
         }
@@ -81,12 +88,16 @@ namespace PrimeDocs_Desktop.UI.Components
                 WindowStartupLocation = WindowStartupLocation.Manual
             };
 
-            if (actual != null)
+            if (actual != null && !(actualWindow.WindowState == WindowState.Maximized))
             {
                 documentWindow.Left = actual.Left;
                 documentWindow.Top = actual.Top;
                 documentWindow.Width = actual.Width;
                 documentWindow.Height = actual.Height;
+            }
+            else
+            {
+                documentWindow.WindowState = WindowState.Maximized;
             }
             documentWindow.Show();
             actualWindow.Close();

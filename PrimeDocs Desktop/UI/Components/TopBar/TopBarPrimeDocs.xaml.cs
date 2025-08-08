@@ -112,7 +112,6 @@ namespace PrimeDocs_Desktop.UI.Components
             }
             catch (Exception ex)
             {
-                // Aqui você pode logar o erro ou apresentar imagem padrão
                 Console.WriteLine($"Erro ao carregar imagem: {ex.Message}");
             }
         }
@@ -125,7 +124,6 @@ namespace PrimeDocs_Desktop.UI.Components
             }
             catch (InvalidOperationException)
             {
-                // O usuário soltou o mouse muito rápido — ignorar
             }
         }
     }

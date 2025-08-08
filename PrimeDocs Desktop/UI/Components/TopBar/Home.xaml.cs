@@ -37,12 +37,17 @@ namespace PrimeDocs_Desktop.UI.Components
                     WindowStartupLocation = WindowStartupLocation.Manual
                 };
 
-                if (actual != null)
+                if (actual != null && !(actualWindow.WindowState == WindowState.Maximized))
                 {
                     initialWindow.Left = actual.Left;
                     initialWindow.Top = actual.Top;
                     initialWindow.Width = actual.Width;
                     initialWindow.Height = actual.Height;
+                }
+                else
+                {
+
+                    initialWindow.WindowState = WindowState.Maximized;
                 }
                 initialWindow.Show();
                 actualWindow.Close();
