@@ -14,8 +14,9 @@
     AllowsTransparency="True"
     Background="Transparent"
     Icon="/Resources/Icons/PrimeDocs.png"
+    ResizeMode="NoResize"
     WindowStyle="None"
-    mc:Ignorable="d" ResizeMode="NoResize">
+    mc:Ignorable="d">
     <WindowChrome.WindowChrome>
         <WindowChrome
             CaptionHeight="0"
@@ -28,7 +29,6 @@
         Background="White"
         BorderBrush="#001BC9"
         BorderThickness="2"
-
         CornerRadius="13">
         <Grid>
             <Border
@@ -43,8 +43,10 @@
 
                     <components:TopBarPrimeDocsClose
                         x:Name="tbpInitialWindowTopBar"
+                        Width="596"
                         Height="35"
-                        VerticalAlignment="Center" HorizontalAlignment="Center" Width="596" />
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center" />
                     <ScrollViewer
                         x:Name="scrollViewer"
                         Grid.Row="1"

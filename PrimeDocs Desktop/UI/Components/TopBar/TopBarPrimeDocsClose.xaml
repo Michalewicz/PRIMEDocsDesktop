@@ -15,13 +15,11 @@
         ClipToBounds="True"
         CornerRadius="7">
 
-        <Grid
-            Height="35"
-            Background="Transparent"
-            >
+        <Grid Height="35" Background="Transparent">
 
-            <!--  Ícone  -->
+            <!--  Ícone Home  -->
             <local:Home
+                x:Name="btInitialWindowHome"
                 HorizontalAlignment="Left"
                 d:BorderBrush="Red"
                 d:BorderThickness="2"
@@ -31,30 +29,28 @@
             <TextBlock
                 Name="tbTopBarTitle"
                 Width="420"
+                Margin="44,0,336,0"
                 VerticalAlignment="Center"
                 DockPanel.Dock="Left"
                 FontFamily="Open Sans"
                 FontSize="20"
                 Foreground="White"
                 Text="Title"
-                TextWrapping="Wrap" Margin="44,0,336,0" />
+                TextWrapping="Wrap" />
 
             <!--  Botões da Janela (Direita)  -->
-            <Border
-                ClipToBounds="True"
-                CornerRadius="13"
-                >
+            <Border ClipToBounds="True" CornerRadius="13">
                 <local:WindowControl
-                x:Name="windowControlTopBar"
-                Margin="440,0,0,0"
-                Width="155"
-                Height="36"
-                MinWidth="155"
-                VerticalAlignment="Center"
-                d:BorderBrush="Red"
-                d:BorderThickness="2"
-                DockPanel.Dock="Right" HorizontalAlignment="Left" 
-                />
+                    x:Name="windowControlTopBar"
+                    Width="155"
+                    Height="36"
+                    MinWidth="155"
+                    Margin="440,0,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    d:BorderBrush="Red"
+                    d:BorderThickness="2"
+                    DockPanel.Dock="Right" />
             </Border>
         </Grid>
     </Border>

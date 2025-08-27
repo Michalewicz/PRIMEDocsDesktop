@@ -19,7 +19,7 @@
             BorderBrush="{x:Null}"
             Click="btInitialWindowHome_Click"
             Focusable="False"
-            Style="{StaticResource WindowControlButtonStyle}"
+            Style="{StaticResource WindowControlHomeNormalButtonStyle}"
             ToolTip="Início">
             <Grid>
                 <Image

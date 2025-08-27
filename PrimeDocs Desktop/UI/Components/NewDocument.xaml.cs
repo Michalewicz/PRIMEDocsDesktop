@@ -48,6 +48,7 @@ namespace PrimeDocs_Desktop.UI.Components
             else
             {
                 documentWindow.WindowState = WindowState.Maximized;
+                documentWindow.UpdateWindowState(WindowState.Maximized);
             }
             documentWindow.Show();
             actualWindow.Close();
@@ -72,6 +73,8 @@ namespace PrimeDocs_Desktop.UI.Components
             } else
             {
                 documentWindow.WindowState = WindowState.Maximized;
+                documentWindow.UpdateWindowState(WindowState.Maximized);
+
             }
                 documentWindow.Show();
             actualWindow.Close();
@@ -98,6 +101,7 @@ namespace PrimeDocs_Desktop.UI.Components
             else
             {
                 documentWindow.WindowState = WindowState.Maximized;
+                documentWindow.UpdateWindowState(WindowState.Maximized);
             }
             documentWindow.Show();
             actualWindow.Close();
@@ -115,7 +119,7 @@ namespace PrimeDocs_Desktop.UI.Components
             }
             else
             {
-                newAngle = 180; // Default angle if no rotation exists
+                newAngle = 180; 
             }
             RotateTransform rotation = new RotateTransform(newAngle);
             button.RenderTransform = rotation;
@@ -137,8 +141,6 @@ namespace PrimeDocs_Desktop.UI.Components
                 documentCollapsed = false;
                 grInitialWindowDocumentCreationNew.Visibility = Visibility.Visible;
             }
-
-            // Dispara evento
             CollapsedChanged?.Invoke(this, EventArgs.Empty);
         }
 

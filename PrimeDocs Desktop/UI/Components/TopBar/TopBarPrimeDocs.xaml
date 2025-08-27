@@ -20,8 +20,10 @@
             Background="Transparent"
             LastChildFill="True">
 
-            <!--  Ícone  -->
+            <!--  Ícone Home  -->
             <local:Home
+                x:Name="btInitialWindowHome"
+                Margin="0,0,5,0"
                 HorizontalAlignment="Left"
                 d:BorderBrush="Red"
                 d:BorderThickness="2"

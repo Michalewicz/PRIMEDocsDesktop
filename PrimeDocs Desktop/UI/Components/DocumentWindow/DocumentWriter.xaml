@@ -12,6 +12,6 @@
             Width="992"
             Height="1403.2"
             HorizontalAlignment="Stretch"
-            VerticalAlignment="Stretch"/>
+            VerticalAlignment="Stretch" />
     </Grid>
 </UserControl>

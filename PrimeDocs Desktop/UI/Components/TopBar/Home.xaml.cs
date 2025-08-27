@@ -43,11 +43,13 @@ namespace PrimeDocs_Desktop.UI.Components
                     initialWindow.Top = actual.Top;
                     initialWindow.Width = actual.Width;
                     initialWindow.Height = actual.Height;
+
                 }
                 else
                 {
 
                     initialWindow.WindowState = WindowState.Maximized;
+                    initialWindow.UpdateWindowState(WindowState.Maximized);
                 }
                 initialWindow.Show();
                 actualWindow.Close();
