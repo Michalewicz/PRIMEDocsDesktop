@@ -13,8 +13,8 @@
     MinHeight="800"
     AllowsTransparency="True"
     Background="Transparent"
-    WindowStyle="None"
     Icon="/Resources/Icons/PrimeDocs.png"
+    WindowStyle="None"
     mc:Ignorable="d">
     <WindowChrome.WindowChrome>
         <WindowChrome
@@ -47,12 +47,20 @@
                         Height="35"
                         HorizontalAlignment="Stretch"
                         VerticalAlignment="Top" />
-                    <ScrollViewer
-                        x:Name="scrollViewer"
+                    <Border
+                        x:Name="ScrollViewerBorder"
                         Grid.Row="1"
-                        Padding="0"
-                        HorizontalScrollBarVisibility="Disabled"
-                        VerticalScrollBarVisibility="Auto" />
+                        BorderBrush="White"
+                        BorderThickness="0">
+                        <ScrollViewer
+                            x:Name="scrollViewer"
+                            Grid.Row="2"
+                            Padding="0"
+                            HorizontalScrollBarVisibility="Disabled"
+                            VerticalScrollBarVisibility="Auto">
+                            <components:DocumentWriter x:Name="dWriter" />
+                        </ScrollViewer>
+                    </Border>
                 </Grid>
             </Border>
         </Grid>

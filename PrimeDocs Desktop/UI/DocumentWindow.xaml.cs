@@ -33,6 +33,7 @@ namespace PrimeDocs_Desktop.UI
             {
                 MainBorder.CornerRadius = new CornerRadius(0);
                 MainBorder.Padding = new Thickness(0, 5, 0, 0);
+                SecondaryBorder.BorderThickness = new Thickness(0, 0, 5, 53);
                 tbpInitialWindowTopBar.TopBarBorder.CornerRadius = new CornerRadius(0);
                 tbpInitialWindowTopBar.windowControlTopBar.btClose.Style = (Style)FindResource("WindowControlCloseMaximizedButtonStyle");
             }
@@ -40,6 +41,7 @@ namespace PrimeDocs_Desktop.UI
             {
                 MainBorder.CornerRadius = new CornerRadius(13);
                 MainBorder.Padding = new Thickness(0);
+                SecondaryBorder.BorderThickness = new Thickness(0, 0, 0, 0);
                 tbpInitialWindowTopBar.TopBarBorder.CornerRadius = new CornerRadius(7);
                 tbpInitialWindowTopBar.windowControlTopBar.btClose.Style = (Style)FindResource("WindowControlCloseNormalButtonStyle");
             }
