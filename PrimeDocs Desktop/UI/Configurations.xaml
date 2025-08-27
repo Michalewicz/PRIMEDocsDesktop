@@ -28,7 +28,7 @@
         Background="White"
         BorderBrush="#001BC9"
         BorderThickness="2"
-        ClipToBounds="True"
+
         CornerRadius="13">
         <Grid>
             <Border
@@ -41,12 +41,10 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
 
-                    <components:TopBarPrimeDocs
+                    <components:TopBarPrimeDocsClose
                         x:Name="tbpInitialWindowTopBar"
-                        Grid.Row="0"
                         Height="35"
-                        HorizontalAlignment="Stretch"
-                        VerticalAlignment="Top" />
+                        VerticalAlignment="Center" HorizontalAlignment="Center" Width="596" />
                     <ScrollViewer
                         x:Name="scrollViewer"
                         Grid.Row="1"

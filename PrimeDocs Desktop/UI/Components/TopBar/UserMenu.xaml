@@ -10,19 +10,19 @@
     mc:Ignorable="d">
 
     <StackPanel
-        Orientation="Horizontal"
+        Height="35"
         HorizontalAlignment="Right"
         VerticalAlignment="Center"
-        Height="35">
-        <!-- Ícone de Perfil -->
+        Orientation="Horizontal">
+        <!--  Ícone de Perfil  -->
         <local:Profile
             VerticalAlignment="Center"
             d:BorderBrush="Yellow"
             d:BorderThickness="2" />
-        <!-- Ícone de Configuração -->
+        <!--  Ícone de Configuração  -->
         <local:Config
-            VerticalAlignment="Center"
             Margin="10,0,0,0"
+            VerticalAlignment="Center"
             d:BorderBrush="Yellow"
             d:BorderThickness="2" />
     </StackPanel>

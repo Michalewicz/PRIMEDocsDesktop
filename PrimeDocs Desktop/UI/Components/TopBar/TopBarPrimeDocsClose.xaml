@@ -1,12 +1,12 @@
 ﻿<UserControl
-    x:Class="PrimeDocs_Desktop.UI.Components.TopBarPrimeDocs"
+    x:Class="PrimeDocs_Desktop.UI.Components.TopBarPrimeDocsClose"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:PrimeDocs_Desktop.UI.Components"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignHeight="35"
-    d:DesignWidth="800"
+    d:DesignWidth="600"
     mc:Ignorable="d">
 
     <Border
@@ -15,10 +15,10 @@
         ClipToBounds="True"
         CornerRadius="7">
 
-        <DockPanel
+        <Grid
             Height="35"
             Background="Transparent"
-            LastChildFill="True">
+            >
 
             <!--  Ícone  -->
             <local:Home
@@ -37,27 +37,25 @@
                 FontSize="20"
                 Foreground="White"
                 Text="Title"
-                TextWrapping="Wrap" />
+                TextWrapping="Wrap" Margin="44,0,336,0" />
 
             <!--  Botões da Janela (Direita)  -->
-            <local:WindowControl
+            <Border
+                ClipToBounds="True"
+                CornerRadius="13"
+                >
+                <local:WindowControl
                 x:Name="windowControlTopBar"
+                Margin="440,0,0,0"
                 Width="155"
-                Height="35"
+                Height="36"
                 MinWidth="155"
-                VerticalAlignment="Top"
-                d:BorderBrush="Red"
-                d:BorderThickness="2"
-                DockPanel.Dock="Right" />
-            <!--  Menu do Usuário (Direita, antes dos botões)  -->
-            <local:UserMenu
-                x:Name="userMenuTopBar"
-                Margin="0,0,5,0"
                 VerticalAlignment="Center"
                 d:BorderBrush="Red"
                 d:BorderThickness="2"
-                DockPanel.Dock="Right" />
-
-        </DockPanel>
+                DockPanel.Dock="Right" HorizontalAlignment="Left" 
+                />
+            </Border>
+        </Grid>
     </Border>
 </UserControl>

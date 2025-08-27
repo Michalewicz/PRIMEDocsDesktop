@@ -10,26 +10,26 @@
     mc:Ignorable="d">
     <Grid>
         <Button
-        MinWidth="35"
-        MinHeight="35"
-        MaxWidth="35"
-        MaxHeight="35"
-        HorizontalAlignment="Stretch"
-        VerticalAlignment="Stretch"
-        BorderBrush="{x:Null}"
-        Click="btInitialWindowHome_Click"
-        Focusable="False"
-        Style="{StaticResource WindowControlButtonStyle}"
-        ToolTip="Início">
+            MinWidth="35"
+            MinHeight="35"
+            MaxWidth="35"
+            MaxHeight="35"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            BorderBrush="{x:Null}"
+            Click="btInitialWindowHome_Click"
+            Focusable="False"
+            Style="{StaticResource WindowControlButtonStyle}"
+            ToolTip="Início">
             <Grid>
                 <Image
-                MinWidth="30"
-                MinHeight="30"
-                MaxWidth="30"
-                MaxHeight="30"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Source="/Resources/Icons/InitialWindow/PrimeDocsBar.png" />
+                    MinWidth="30"
+                    MinHeight="30"
+                    MaxWidth="30"
+                    MaxHeight="30"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Source="/Resources/Icons/InitialWindow/PrimeDocsBar.png" />
             </Grid>
         </Button>
     </Grid>
